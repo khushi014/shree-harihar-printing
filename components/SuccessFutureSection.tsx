@@ -51,10 +51,10 @@ export default function SuccessFutureSection() {
             {
               title: "Pharma Packaging",
               desc: "Compliance-driven printing for vials, injectables, liquids, and sterile items using high-quality precision.",
-              img: "https://images.unsplash.com/photo-1584308666744-24d5e4b2d56a?auto=format&fit=crop&q=80&w=600"
+              img: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=600"
             }
           ].map((item, idx) => (
-            <div key={idx} className="relative aspect-[4/5] bg-white group overflow-hidden shadow-lg cursor-pointer">
+            <div key={idx} className="relative aspect-4/5 bg-white group overflow-hidden shadow-lg cursor-pointer">
               {/* Background Image */}
               <img 
                 src={item.img} 

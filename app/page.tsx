@@ -7,7 +7,7 @@ import QuickTrustBar from "../components/QuickTrustBar";
 import LegacySection from "../components/LegacySection";
 import InfrastructureSection from "../components/InfrastructureSection";
 import SuccessFutureSection from "../components/SuccessFutureSection";
-import CapabilitiesSection from "../components/CapabilitiesSection";
+import StrongCoreSection from "../components/StrongCoreSection";
 import FooterSection from "../components/FooterSection";
 
 import { X, ClipboardList, CheckCircle } from "lucide-react";
@@ -57,7 +57,7 @@ export default function Home() {
       
       <SuccessFutureSection />
       
-      <CapabilitiesSection setQuoteModalOpen={setQuoteModalOpen} />
+      <StrongCoreSection />
       
       <FooterSection setQuoteModalOpen={setQuoteModalOpen} />
 
