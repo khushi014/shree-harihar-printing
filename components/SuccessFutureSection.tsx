@@ -13,7 +13,7 @@ export default function SuccessFutureSection() {
         
         {/* Header Row */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 lg:mb-24">
-          <h2 className="font-serif text-[2.5rem] sm:text-[3.5rem] lg:text-[4rem] leading-[1.1] text-slate-900 max-w-2xl">
+          <h2 className="font-heading text-[2.5rem] sm:text-[3.5rem] lg:text-[4rem] leading-[1.1] text-slate-900 max-w-2xl">
             Shree Harihar creates things for <br />
             your <span className="relative inline-block">
               success
@@ -67,7 +67,7 @@ export default function SuccessFutureSection() {
                 
                 {/* Default visible header */}
                 <div className="flex justify-between items-center w-full min-h-[60px] shrink-0">
-                  <h3 className="font-serif text-lg font-medium tracking-wide m-0">{item.title}</h3>
+                  <h3 className="font-heading text-lg font-medium tracking-wide m-0">{item.title}</h3>
                   <ArrowDownRight className="w-5 h-5 shrink-0 transition-transform duration-300 group-hover:rotate-[-90deg]" />
                 </div>
                 
@@ -88,7 +88,7 @@ export default function SuccessFutureSection() {
       {/* Huge Background Text Since-1921 */}
       <div className="mt-12 sm:mt-16 lg:mt-24 w-full text-center select-none relative z-10 px-4">
         <span 
-          className="font-heading font-black text-[4.5rem] sm:text-[8rem] md:text-[11rem] lg:text-[13rem] xl:text-[15rem] leading-[0.8] text-transparent inline-block whitespace-nowrap"
+          className="font-heading font-black text-[3.5rem] sm:text-[8rem] md:text-[11rem] lg:text-[13rem] xl:text-[15rem] leading-[0.8] text-transparent inline-block whitespace-nowrap"
           style={{ WebkitTextStroke: "1px rgba(71, 85, 105, 0.8)" }} 
         >
           Since-1921

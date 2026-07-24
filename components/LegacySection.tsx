@@ -24,7 +24,7 @@ export default function LegacySection() {
           <div className="w-full lg:w-1/2 flex flex-col justify-center">
             <h2 className="font-heading font-light text-4xl sm:text-5xl md:text-6xl text-slate-900 tracking-tight mb-12 leading-tight">
               The blueprint for <br className="hidden sm:block"/>
-              <span className="font-serif">your</span> <span className="relative inline-block font-normal">
+              <span className="font-heading">your</span> <span className="relative inline-block font-normal">
                 success
                 <span className="absolute bottom-1 left-0 w-full h-1 bg-primary"></span>
               </span>

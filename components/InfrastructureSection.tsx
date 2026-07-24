@@ -21,18 +21,18 @@ export default function InfrastructureSection() {
         
         {/* Staggered Heading from Screenshot */}
         <div className="relative z-10 flex flex-col items-center text-center">
-          <h2 className="font-serif text-[3rem] sm:text-[4rem] lg:text-[5.5rem] leading-[1.1] text-white">
+          <h2 className="font-heading text-[3rem] sm:text-[4rem] lg:text-[5.5rem] leading-[1.1] text-white">
             Offering shine
           </h2>
           <div className="flex items-center gap-6 mt-2 mb-2">
             <a href="#quote" className="bg-primary text-white text-[13px] font-bold uppercase tracking-widest py-3 px-8 rounded-full hover:bg-slate-900 transition-colors">
               Get Started
             </a>
-            <h2 className="font-serif text-[3rem] sm:text-[4rem] lg:text-[5.5rem] leading-[1.1] text-white">
+            <h2 className="font-heading text-[3rem] sm:text-[4rem] lg:text-[5.5rem] leading-[1.1] text-white">
               to excellence
             </h2>
           </div>
-          <h2 className="font-serif text-[3rem] sm:text-[4rem] lg:text-[5.5rem] leading-[1.1] text-white">
+          <h2 className="font-heading text-[3rem] sm:text-[4rem] lg:text-[5.5rem] leading-[1.1] text-white">
             printing stuff
           </h2>
         </div>
@@ -52,7 +52,7 @@ export default function InfrastructureSection() {
                   01
                 </span>
               </div>
-              <h3 className="font-serif text-xl text-slate-900 mb-4">Prepress</h3>
+              <h3 className="font-heading text-xl text-slate-900 mb-4">Prepress</h3>
               <p className="font-sans text-[13px] text-slate-500 leading-relaxed grow mb-4">
                 Advanced plate making systems and structural packaging software ensuring absolute dot precision.
               </p>
@@ -69,7 +69,7 @@ export default function InfrastructureSection() {
                   02
                 </span>
               </div>
-              <h3 className="font-serif text-xl text-slate-900 mb-4">Printing Department</h3>
+              <h3 className="font-heading text-xl text-slate-900 mb-4">Printing Department</h3>
               <p className="font-sans text-[13px] text-slate-500 leading-relaxed grow mb-4">
                 High-speed multi-color Heidelberg presses equipped with inline coating and spectrophotometers.
               </p>
@@ -86,7 +86,7 @@ export default function InfrastructureSection() {
                   03
                 </span>
               </div>
-              <h3 className="font-serif text-xl text-slate-900 mb-4">Post Press Department</h3>
+              <h3 className="font-heading text-xl text-slate-900 mb-4">Post Press Department</h3>
               <p className="font-sans text-[13px] text-slate-500 leading-relaxed grow mb-4">
                 Auto coating, blanking, vision inspection arrays, automatic punching machines, and folder gluers.
               </p>
@@ -103,7 +103,7 @@ export default function InfrastructureSection() {
                   04
                 </span>
               </div>
-              <h3 className="font-serif text-xl text-slate-900 mb-4">Flexo Label Printing</h3>
+              <h3 className="font-heading text-xl text-slate-900 mb-4">Flexo Label Printing</h3>
               <p className="font-sans text-[13px] text-slate-500 leading-relaxed grow mb-4">
                 Roll-fed premium pressure-sensitive labels, precision varnishes, and commercial packaging stickers.
               </p>
@@ -120,7 +120,7 @@ export default function InfrastructureSection() {
                   05
                 </span>
               </div>
-              <h3 className="font-serif text-xl text-slate-900 mb-4">Insert Printing Division</h3>
+              <h3 className="font-heading text-xl text-slate-900 mb-4">Insert Printing Division</h3>
               <p className="font-sans text-[13px] text-slate-500 leading-relaxed grow mb-4">
                 High-precision miniature cross folding production for specialized pharma instruction inserts.
               </p>

@@ -51,7 +51,7 @@ export default function StrongCoreSection() {
         
         {/* Section Headings centered */}
         <div className="text-center max-w-4xl mx-auto mb-16 lg:mb-24 flex flex-col items-center">
-          <h2 className="font-serif text-[2.5rem] sm:text-[3.5rem] lg:text-[4.5rem] leading-[1.1] text-slate-900 mb-8 w-full block">
+          <h2 className="font-heading text-[2.5rem] sm:text-[3.5rem] lg:text-[4.5rem] leading-[1.1] text-slate-900 mb-8 w-full block">
             The <span className="relative inline-block">
               strong core
               <span className="absolute bottom-2 left-0 w-full h-[3px] bg-primary"></span>
@@ -75,31 +75,46 @@ export default function StrongCoreSection() {
               <div 
                 key={val.id}
                 onMouseEnter={() => setActiveIndex(idx)}
-                className={`py-8 sm:py-10 border-b border-slate-200 flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-12 cursor-pointer transition-colors duration-300 ${activeIndex === idx ? "bg-slate-50" : "bg-transparent hover:bg-slate-50/50"}`}
+                className={`py-8 sm:py-10 border-b border-slate-200 flex flex-col cursor-pointer transition-colors duration-300 ${activeIndex === idx ? "bg-slate-50" : "bg-transparent hover:bg-slate-50/50"}`}
               >
-                {/* Number Outline */}
-                <span 
-                  className="font-heading font-black text-5xl sm:text-6xl text-transparent shrink-0 w-20 leading-none"
-                  style={{ WebkitTextStroke: activeIndex === idx ? "1.5px #C62026" : "1.5px #CBD5E1" }}
-                >
-                  {val.id}
-                </span>
+                <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-12 px-4 sm:px-0">
+                  {/* Number Outline */}
+                  <span 
+                    className="font-heading font-black text-5xl sm:text-6xl text-transparent shrink-0 w-20 leading-none"
+                    style={{ WebkitTextStroke: activeIndex === idx ? "1.5px #C62026" : "1.5px #CBD5E1" }}
+                  >
+                    {val.id}
+                  </span>
 
-                {/* Content */}
-                <div className="flex flex-col">
-                  <h3 className={`font-serif text-xl sm:text-2xl mb-2 transition-colors ${activeIndex === idx ? "text-primary" : "text-slate-800"}`}>
-                    {val.title}
-                  </h3>
-                  <p className="font-sans text-sm text-slate-500 leading-relaxed max-w-lg">
-                    {val.desc}
-                  </p>
+                  {/* Content */}
+                  <div className="flex flex-col">
+                    <h3 className={`font-heading text-xl sm:text-2xl mb-2 transition-colors ${activeIndex === idx ? "text-primary" : "text-slate-800"}`}>
+                      {val.title}
+                    </h3>
+                    <p className="font-sans text-sm text-slate-500 leading-relaxed max-w-lg">
+                      {val.desc}
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Mobile Image (hidden on lg devices) */}
+                <div className="w-full mt-6 lg:hidden px-4 sm:px-0">
+                  <div className="relative w-full aspect-video sm:aspect-21/9 bg-white p-2 shadow-md">
+                    <div className="w-full h-full relative overflow-hidden bg-slate-200">
+                      <img 
+                        src={val.img} 
+                        alt={val.title}
+                        className="w-full h-full object-cover grayscale opacity-90 transition-all duration-500 hover:grayscale-0 hover:opacity-100"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
 
           {/* Right Column: Floating Tilted Image */}
-          <div className="w-full lg:w-[40%] sticky top-32 flex justify-center items-center h-[400px] lg:h-[600px] z-20">
+          <div className="hidden lg:flex w-[40%] sticky top-32 justify-center items-center h-150 z-20">
             <div className="relative w-full h-full flex justify-center items-center">
               {strongValues.map((val, idx) => (
                 <div
