@@ -1,0 +1,102 @@
+Here's the extracted text from the company profile PDF, organized by page:
+
+**Page 1 (Cover)**
+- make your impression
+- Where printing is **5Generation** tradition and our passion is to make your impression
+- HARIHAR PRINTING PRESS (signage on building)
+
+**Page 2 — Machinery Infrastructure**
+- Heading: Machinery Infrastructure...
+- **Prepress**
+  | Nos. | Machine | Size | Make |
+  |---|---|---|---|
+  | 1 | Plate Making | 22" x 32" | Protek |
+- **Printing Department**
+  | Nos. | Machine | Size | Make |
+  |---|---|---|---|
+  | 1 | Two Colour offset Machine | 20" x 29" | Heidelberg |
+  | 1 | Two Colour offset Machine | 20" x 28" | Heidelberg |
+  | 1 | Four Colour + Coater offset Machine | 20" x 28" | Heidelberg |
+  | 1 | Six Colour + Coater offset Machine | 23" x 29" | Heidelberg |
+
+**Page 3 — Post Press Department**
+- **Coating Department**
+  | 1 | Auto Print Aqua/UV Coater | 22" x 32" | AutoPrint |
+  | 1 | Dripoff Machine | 20" x 29" | Heidelberg + Auto print |
+- **Stripping Department**
+  | 1 | Blanking Machine | 28" x 40" | Maxima |
+- **Inspection Department**
+  | 1 | Carton Inspection Machine | 250mm | AutoPrint |
+
+**Page 4 — Punching & Pasting Departments**
+- **Punching Department**
+  | 1 | Manual Punching Machine | 25"x37" | Friends |
+  | 1 | Manual Punching Machine | 22"x32" | Friends |
+  | 1 | Fully Automatic Punching Machine | 24"x34" | Maxima |
+  | 1 | Fully Automatic Punching Machine | 28" x 40" | Maxima |
+- **Pasting Department**
+  | 1 | Auto Side + Lock Bottom Folder Gluer | 500mm | Boxtech |
+  | 1 | Bobst Visionfold with Accubraille Folder Gluer | 800mm | Bobst |
+
+**Page 5 — The Blueprint for Success**
+- Logo: SHREE Harihar PRINTING WORKS LLP
+- Heading: The blueprint for success...
+- Body: For us, our vision and mission are the blueprints for our consistent and remarkable presence in the industry despite challenges as we have endeavored to follow it to the core. At the core of our vision and mission are
+- Three highlighted boxes:
+  - A strong penchant for innovation
+  - Achieving the highest customer satisfaction
+  - Creating a positive and appreciating work environment
+- Closing paragraph: ...and with changing times adopting new technologies and processes we have maintained the stronghold on our craft. Same time we are proud to be partners for growth for our esteemed clients owing to our pledge for high standards of quality and perfection. Needless to say, these two were achievable thanks to our astute, committed and passionate workforce for whom we always try to maintain peaceful, safe and harmonious work culture.
+
+**Page 6 — Tailor-made Perfection**
+- Logo: SHREE Harihar PRINTING WORKS LLP
+- Heading: Tailor-made perfection...
+- Body: Industry requirements range from small stickers to big cartons. But we are there to make it possible with the on-time delivery promise and assurance of the highest quality. That sums up why most of the clients love to have us as their printing and packaging solutions provider over all these years.
+
+**Page 7 — FMCG & Personal Care**
+- Heading: FMCG & Personal Care
+- Body: FMCG & Personal Care Cartons: From Agarbatti boxes to soap and perfume boxes, our fast and precise printing solutions help our FMCG industry clients to keep pace with this fast-paced industry without any delivery glitches.
+- For the FMCG industry we are equipped with the best technology and process to offer solutions like toothpaste cartons, incense sticks, pesticides, perfumes, tea, soap, spice, garment, cosmetics and more with high-quality precision.
+- Our solutions for the FMCG industry ensures:
+  - Designer and eye-catching solutions
+  - Multiple size variants
+  - Perfect print and quality assurance
+  - Hygienic packing assurance
+  - Use of quality paper
+- Product images: FRYLO Poochkas; HONEST Methi Gota / Khaman / Idli / Dhokla / Dalwada / Thepla Instant Mix
+
+**Page 8 — Sticker Label & Promotional Materials**
+- Heading: Sticker Lable (as printed — likely intended "Sticker Label")
+- Body: Sticker Label: Though stickers are small in size, it creates a big impact in pushing the product or promotion with its eye-catching effect. Also certain industries, stickers are a prerequisite. So for such companies, we are always there to provide the best quality solutions in their desired quantity within the promised time frame. (repeated twice in the document)
+- Heading: Promotional Materials
+- Body: Every industry needs promotion and advertising propaganda with consistent innovation and out-of-the-box creative solutions. We are happy that we have been able to fulfill the demands of creativity and innovativeness that our clients in the industry ask with our range of solutions like catalogs, standees, brochures, posters, danglers helping them create the right kind of noise and presence in their respective field.
+- Product images: bottle labels (YES, gallons), supplement tub (Gold Standard Whey), medical vials; brochure/calendar mockups; Amul products (Masti, Kool, Slice)
+
+**Page 9 — Pharma Product Images**
+- No body text — product packaging images only:
+  - HAEMUP Liquid
+  - Inyección de Aminoácidos (Suiphar)
+  - GACET (paracetamol perfusion)
+  - Abbott Alinfec-100 (Amikacin Sulphate Injection)
+  - AMIJECT 250 Novo (Amikacin Sulphate Injection)
+  - DICLOKEM (Diclofenac Sodium Injection)
+  - Abbott Alinfec-100 (Amikacin Sulphate Injection)
+  - GLODERM Cream, CLOTRILIN Cream
+  - AMIJECT 250 (Amikacin Sulphate Injection)
+  - Keto-Con (Ketoconazole Cream), BECLOGEN Cream
+  - LOFEL (Levofloxacin Hydrochloride Infusion)
+  - RABELOC 20 (Rabeprazolium, with Braille)
+  - ANTINFEK 300 (bottle)
+
+**Page 10 — The Strong Core**
+- Heading: The strong core
+- Body: Established in 1921, Shree Harihar Printing Works has been holding the baton of quality, uncompromised perfection and promised solutions making it a pioneer name in the industry. The kudos for the same goes to the unwavering founding values which have stayed unshaken despite every odd and challenging.
+- Subheading: These are the values that speak of...
+- Value list: Quality, Promise, Teamwork, Appreciation, Customer Satisfaction, Innovation
+- Closing: Together they form a strong core helping the company fulfill its vision and mission of scaling new heights of success in the printing industry.
+
+**Page 11 — Closing Page**
+- Heading: A centenary of trust and commitment...
+- Body: We are committed to achieving perfection and we yearn for the happiness and satisfaction of our clients...something we are lucky to achieve through the solutions we have been offering since our inception. Being transparent and customer-committed is a cornerstone of our inception and even after four generations of presence in the industry, these values have remained undeterred. Our esteemed clientele is a proud testimony of it.
+
+Let me know if you'd like this exported as a plain text/Word file, or reformatted into a specific structure (e.g., just the machinery tables, or just the body copy without headings).
