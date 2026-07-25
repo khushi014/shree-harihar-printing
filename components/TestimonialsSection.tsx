@@ -120,7 +120,7 @@ export default function TestimonialsSection() {
               <span className="absolute -bottom-1 left-0 w-full h-0.75 bg-primary" />
             </span>
           </h2>
-          <p className="font-sans text-sm text-slate-500 mt-5 max-w-lg mx-auto leading-relaxed">
+          <p className="font-sans text-[15px] sm:text-base text-slate-500 mt-5 max-w-lg mx-auto leading-relaxed">
             Over a century of craftsmanship, echoed by the brands that rely on us every single day.
           </p>
         </motion.div>
@@ -172,7 +172,7 @@ export default function TestimonialsSection() {
 
                   <StarRating count={t.rating} />
 
-                  <p className="font-sans text-sm text-slate-700 leading-relaxed flex-1 mb-7">
+                  <p className="font-sans text-[15px] sm:text-base text-slate-700 leading-relaxed flex-1 mb-7">
                     &ldquo;{t.quote}&rdquo;
                   </p>
 

@@ -97,7 +97,7 @@ export default function HeroSection() {
                   {slide.align === "left" && (
                     <div className="w-px h-20 bg-slate-500/50 hidden sm:block"></div>
                   )}
-                  <p className={`font-sans text-slate-300 text-sm sm:text-base lg:text-lg font-light leading-relaxed max-w-lg ${slide.align === "left" ? "py-2" : ""}`}>
+                  <p className={`font-sans text-slate-300 text-[15px] sm:text-[17px] lg:text-[19px] font-light leading-relaxed max-w-lg ${slide.align === "left" ? "py-2" : ""}`}>
                     {slide.desc}
                   </p>
                 </div>
@@ -120,13 +120,13 @@ export default function HeroSection() {
       {/* Navigation Arrows */}
       <button 
         onClick={() => setHeroSlide((prev) => (prev === 0 ? heroSlides.length - 1 : prev - 1))}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 text-white/50 hover:text-white transition-colors p-2"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 text-white/50 hover:text-white transition-colors p-2 hidden md:block"
       >
         <ChevronLeft className="h-10 w-10 sm:h-12 sm:w-12" />
       </button>
       <button 
         onClick={() => setHeroSlide((prev) => (prev + 1) % heroSlides.length)}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 text-white/50 hover:text-white transition-colors p-2"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 text-white/50 hover:text-white transition-colors p-2 hidden md:block"
       >
         <ChevronRight className="h-10 w-10 sm:h-12 sm:w-12" />
       </button>

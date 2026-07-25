@@ -71,12 +71,12 @@ export default function SuccessFutureSection() {
             viewport={{ once: true, margin: "-80px" }}
             className="max-w-md flex flex-col items-start gap-4 pb-2"
           >
-            <p className="font-sans text-[13px] text-slate-500 leading-relaxed font-medium">
+            <p className="font-sans text-[15px] text-slate-500 leading-relaxed font-medium">
               We can help you develop and execute transparent and traditional strategy with closely related environmental and business priorities.
             </p>
             <a
               href="#services"
-              className="font-sans text-[13px] font-bold text-slate-900 hover:text-primary transition-colors inline-flex items-center gap-1 border-b-[3px] border-slate-900 hover:border-primary pb-1"
+              className="font-sans text-[15px] font-bold text-slate-900 hover:text-primary transition-colors inline-flex items-center gap-1 border-b-[3px] border-slate-900 hover:border-primary pb-1"
             >
               Awesome Services <ChevronRight className="w-4 h-4 ml-1" />
             </a>
@@ -113,7 +113,7 @@ export default function SuccessFutureSection() {
 
                 {/* Hidden description that reveals on hover */}
                 <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100 flex-grow pt-2 pb-6">
-                  <p className="font-sans text-[13.5px] leading-relaxed text-white/95">
+                  <p className="font-sans text-[15.5px] leading-relaxed text-white/95">
                     {item.desc}
                   </p>
                 </div>

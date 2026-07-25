@@ -83,7 +83,7 @@ export default function StrongCoreSection() {
             custom={0.15}
             initial="hidden"
             animate={headingInView ? "visible" : "hidden"}
-            className="font-sans text-[14px] sm:text-[15px] text-slate-600 leading-relaxed font-medium mb-6"
+            className="font-sans text-base sm:text-lg text-slate-600 leading-relaxed font-medium mb-6"
           >
             Established in 1921, Shree Harihar Printing Works has been holding the baton of quality, uncompromised perfection and promised solutions making it a pioneer name in the industry. The kudos for the same goes to the unwavering founding values which have stayed unshaken despite every odd and challenging.
           </motion.p>
@@ -128,7 +128,7 @@ export default function StrongCoreSection() {
                     <h3 className={`font-heading text-xl sm:text-2xl mb-2 transition-colors ${activeIndex === idx ? "text-primary" : "text-slate-800"}`}>
                       {val.title}
                     </h3>
-                    <p className="font-sans text-sm text-slate-500 leading-relaxed max-w-lg">
+                    <p className="font-sans text-base text-slate-500 leading-relaxed max-w-lg">
                       {val.desc}
                     </p>
                   </div>
@@ -141,7 +141,7 @@ export default function StrongCoreSection() {
                       <img 
                         src={val.img} 
                         alt={val.title}
-                        className="w-full h-full object-cover grayscale opacity-90 transition-all duration-500 hover:grayscale-0 hover:opacity-100"
+                        className="w-full h-full object-cover transition-transform duration-500"
                       />
                     </div>
                   </div>
@@ -176,9 +176,8 @@ export default function StrongCoreSection() {
 
         </div>
 
-        {/* Closing Paragraph */}
         <div className="mt-20 max-w-3xl text-center flex justify-center px-4">
-          <p className="font-sans text-[14px] sm:text-[15px] text-slate-600 leading-relaxed font-semibold italic border-l-4 border-primary pl-6 py-2 text-left">
+          <p className="font-sans text-base sm:text-[17px] text-slate-600 leading-relaxed font-semibold italic border-l-4 border-primary pl-6 py-2 text-left">
             "Together they form a strong core helping the company fulfill its vision and mission of scaling new heights of success in the printing industry."
           </p>
         </div>

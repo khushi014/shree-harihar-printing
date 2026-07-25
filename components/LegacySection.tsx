@@ -129,8 +129,8 @@ export default function LegacySection() {
                   </h3>
                 </div>
                 <div className="w-full">
-                  <p className="font-sans text-xs sm:text-sm text-slate-500 leading-relaxed mb-3 pr-4">
-                    A strong penchant for innovation and the highest quality standards, adapting new technologies and processes to maintain the stronghold on our craft.
+                  <p className="font-sans text-sm sm:text-base text-slate-500 leading-relaxed mb-3 pr-4">
+                    Using high-quality rigid boards and specialty papers to create premium packaging perfect for liquor, jewelry, corporate gifting, and luxury commodities.
                   </p>
                   <a href="#about" className="font-heading text-[10px] sm:text-xs font-black text-slate-900 border-b-[1.5px] border-slate-900 hover:text-primary hover:border-primary transition-colors pb-0.5 inline-flex items-center gap-1 uppercase">
                     Read More <ChevronRight className="w-[10px] h-[10px] sm:w-3 sm:h-3" strokeWidth={3} />

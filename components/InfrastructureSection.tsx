@@ -70,15 +70,15 @@ export default function InfrastructureSection() {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
           className="relative z-10 flex flex-col items-center text-center"
         >
-          <h2 className="font-heading text-[3rem] sm:text-[4rem] lg:text-[5.5rem] leading-[1.1] text-white">
+          <h2 className="font-heading text-3xl min-[400px]:text-4xl sm:text-[4rem] lg:text-[5.5rem] leading-[1.1] text-white whitespace-nowrap sm:whitespace-normal">
             Offering shine to
           </h2>
           <div className="flex items-center gap-6 mt-2 mb-2">
-            <h2 className="font-heading text-[3rem] sm:text-[4rem] lg:text-[5.5rem] leading-[1.1] text-white">
+            <h2 className="font-heading text-3xl min-[400px]:text-4xl sm:text-[4rem] lg:text-[5.5rem] leading-[1.1] text-white whitespace-nowrap sm:whitespace-normal">
               excellence printing
             </h2>
           </div>
-          <h2 className="font-heading text-[3rem] sm:text-[4rem] lg:text-[5.5rem] leading-[1.1] text-white">
+          <h2 className="font-heading text-3xl min-[400px]:text-4xl sm:text-[4rem] lg:text-[5.5rem] leading-[1.1] text-white whitespace-nowrap sm:whitespace-normal">
             stuff
           </h2>
         </motion.div>
@@ -112,7 +112,7 @@ export default function InfrastructureSection() {
                   </span>
                 </div>
                 <h3 className="font-heading text-xl text-slate-900 mb-4">{dept.title}</h3>
-                <p className="font-sans text-[13px] text-slate-500 leading-relaxed grow mb-4">
+                <p className="font-sans text-[15px] text-slate-500 leading-relaxed grow mb-4">
                   {dept.desc}
                 </p>
               </motion.div>
