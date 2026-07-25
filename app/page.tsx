@@ -7,6 +7,7 @@ import QuickTrustBar from "../components/QuickTrustBar";
 import LegacySection from "../components/LegacySection";
 import InfrastructureSection from "../components/InfrastructureSection";
 import SuccessFutureSection from "../components/SuccessFutureSection";
+import TestimonialsSection from "../components/TestimonialsSection";
 import StrongCoreSection from "../components/StrongCoreSection";
 import FooterSection from "../components/FooterSection";
 
@@ -56,6 +57,8 @@ export default function Home() {
       <InfrastructureSection />
       
       <SuccessFutureSection />
+      
+      <TestimonialsSection />
       
       <StrongCoreSection />
       

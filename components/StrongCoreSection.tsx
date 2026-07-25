@@ -1,6 +1,17 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 28 },
+  visible: (delay = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1], delay },
+  }),
+};
+
 
 const strongValues = [
   {
@@ -44,26 +55,47 @@ const strongValues = [
 export default function StrongCoreSection() {
   const [activeIndex, setActiveIndex] = useState(0);
 
+  const headingRef = useRef(null);
+  const headingInView = useInView(headingRef, { once: true, margin: "-80px" });
+
   return (
     <section id="core" className="py-20 lg:py-32 bg-white relative flex flex-col items-center">
       
       <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 flex flex-col items-center">
         
         {/* Section Headings centered */}
-        <div className="text-center max-w-4xl mx-auto mb-16 lg:mb-24 flex flex-col items-center">
-          <h2 className="font-heading text-[2.5rem] sm:text-[3.5rem] lg:text-[4.5rem] leading-[1.1] text-slate-900 mb-8 w-full block">
+        <div ref={headingRef} className="text-center max-w-4xl mx-auto mb-16 lg:mb-24 flex flex-col items-center">
+          <motion.h2
+            variants={fadeUp}
+            custom={0}
+            initial="hidden"
+            animate={headingInView ? "visible" : "hidden"}
+            className="font-heading text-[2.5rem] sm:text-[3.5rem] lg:text-[4.5rem] leading-[1.1] text-slate-900 mb-8 w-full block"
+          >
             The <span className="relative inline-block">
               strong core
-              <span className="absolute bottom-2 left-0 w-full h-[3px] bg-primary"></span>
+              <span className="absolute bottom-2 left-0 w-full h-[3px] bg-primary" />
             </span>
-          </h2>
+          </motion.h2>
           
-          <p className="font-sans text-[14px] sm:text-[15px] text-slate-600 leading-relaxed font-medium mb-6">
+          <motion.p
+            variants={fadeUp}
+            custom={0.15}
+            initial="hidden"
+            animate={headingInView ? "visible" : "hidden"}
+            className="font-sans text-[14px] sm:text-[15px] text-slate-600 leading-relaxed font-medium mb-6"
+          >
             Established in 1921, Shree Harihar Printing Works has been holding the baton of quality, uncompromised perfection and promised solutions making it a pioneer name in the industry. The kudos for the same goes to the unwavering founding values which have stayed unshaken despite every odd and challenging.
-          </p>
-          <span className="font-heading text-sm font-bold uppercase tracking-widest text-primary block mt-4">
+          </motion.p>
+          <motion.span
+            variants={fadeUp}
+            custom={0.28}
+            initial="hidden"
+            animate={headingInView ? "visible" : "hidden"}
+            className="font-heading text-sm font-bold uppercase tracking-widest text-primary block mt-4"
+          >
             These are the values that speak of...
-          </span>
+          </motion.span>
         </div>
 
         {/* Hover Layout Container */}
@@ -72,8 +104,13 @@ export default function StrongCoreSection() {
           {/* Left Column: Rows */}
           <div className="w-full lg:w-[60%] flex flex-col border-t border-slate-200">
             {strongValues.map((val, idx) => (
-              <div 
+              <motion.div
                 key={val.id}
+                variants={fadeUp}
+                custom={idx * 0.06}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-60px" }}
                 onMouseEnter={() => setActiveIndex(idx)}
                 className={`py-8 sm:py-10 border-b border-slate-200 flex flex-col cursor-pointer transition-colors duration-300 ${activeIndex === idx ? "bg-slate-50" : "bg-transparent hover:bg-slate-50/50"}`}
               >

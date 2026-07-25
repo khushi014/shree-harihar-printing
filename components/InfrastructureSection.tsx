@@ -22,18 +22,16 @@ export default function InfrastructureSection() {
         {/* Staggered Heading from Screenshot */}
         <div className="relative z-10 flex flex-col items-center text-center">
           <h2 className="font-heading text-[3rem] sm:text-[4rem] lg:text-[5.5rem] leading-[1.1] text-white">
-            Offering shine
+            Offering shine to
           </h2>
           <div className="flex items-center gap-6 mt-2 mb-2">
-            <a href="#quote" className="bg-primary text-white text-[13px] font-bold uppercase tracking-widest py-3 px-8 rounded-full hover:bg-slate-900 transition-colors">
-              Get Started
-            </a>
+           
             <h2 className="font-heading text-[3rem] sm:text-[4rem] lg:text-[5.5rem] leading-[1.1] text-white">
-              to excellence
+              excellence printing
             </h2>
           </div>
           <h2 className="font-heading text-[3rem] sm:text-[4rem] lg:text-[5.5rem] leading-[1.1] text-white">
-            printing stuff
+            stuff
           </h2>
         </div>
       </div>
