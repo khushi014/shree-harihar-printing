@@ -10,7 +10,7 @@ const fadeUp = {
   visible: (delay = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1], delay },
+    transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] as [number, number, number, number], delay },
   }),
 };
 
@@ -85,7 +85,7 @@ export default function LegacySection() {
             ref={imageRef}
             initial={{ opacity: 0, x: -40 }}
             animate={imageInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
             className="w-full lg:w-1/2"
           >
             <div className="relative w-full h-[350px] sm:h-[450px] shadow-2xl">

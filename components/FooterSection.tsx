@@ -19,7 +19,9 @@ export default function FooterSection({ setQuoteModalOpen }: { setQuoteModalOpen
             {/* Col 1: About/Logo */}
             <div>
               <div className="mb-6">
-                <Image src={Logo} alt="Logo" width={100} height={100}/>
+                <a href="#" className="inline-block focus:outline-none">
+                  <Image src={Logo} alt="Logo" width={100} height={100}/>
+                </a>
               </div>
               <p className="font-sans text-xs text-slate-400 leading-relaxed mb-6">
                 Evolved over 5 generations into a complete, high-volume folding carton Print-Pack company serving pharmaceuticals and FMCG industries.
@@ -104,12 +106,6 @@ export default function FooterSection({ setQuoteModalOpen }: { setQuoteModalOpen
                   <Mail className="h-4 w-4 text-primary-light" />
                   <a href="mailto:info@hariharprintpack.com" className="hover:text-primary-light transition-colors">
                     info@hariharprintpack.com
-                  </a>
-                </li>
-                <li className="flex items-center gap-2">
-                  <ExternalLink className="h-4 w-4 text-primary-light" />
-                  <a href="http://www.hariharprintpack.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary-light transition-colors">
-                    www.hariharprintpack.com
                   </a>
                 </li>
               </ul>

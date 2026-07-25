@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
@@ -69,7 +70,6 @@ export default function TestimonialsSection() {
   const [current, setCurrent] = useState(0);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  // Visible cards per breakpoint — handled via CSS; JS uses 3 for bounds
   const visibleDesktop = 3;
   const maxIndex = testimonials.length - visibleDesktop; // 3
 
@@ -95,21 +95,21 @@ export default function TestimonialsSection() {
     resetTimer();
   };
 
-  // Card width percentage for the track (desktop: 1/3, tablet: 1/2, mobile: 1)
-  // We translate by (current * cardWidthPct)
-  // We use CSS vars to make this responsive via inline style on track
-
   return (
     <section
       id="testimonials"
       className="py-20 lg:py-28 bg-zinc-100 overflow-hidden relative"
     >
-
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-        {/* Heading — centered */}
-        <div className="text-center mb-10">
+        {/* Heading — scroll animated */}
+        <motion.div
+          initial={{ opacity: 0, y: 32 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
+          className="text-center mb-10"
+        >
           <span className="font-heading text-xs font-bold uppercase tracking-[0.25em] text-primary block mb-3">
             Client Voices
           </span>
@@ -123,10 +123,16 @@ export default function TestimonialsSection() {
           <p className="font-sans text-sm text-slate-500 mt-5 max-w-lg mx-auto leading-relaxed">
             Over a century of craftsmanship, echoed by the brands that rely on us every single day.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Arrow buttons — left aligned, above track */}
-        <div className="flex gap-2 mb-6">
+        {/* Arrow buttons */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="flex gap-2 mb-6"
+        >
           <button
             onClick={() => go(-1)}
             aria-label="Previous"
@@ -141,30 +147,24 @@ export default function TestimonialsSection() {
           >
             <ChevronRight className="w-4 h-4" />
           </button>
-        </div>
+        </motion.div>
 
-        {/* Sliding Track wrapper — overflow visible on right for peek effect */}
+        {/* Sliding Track */}
         <div className="overflow-hidden">
-          {/* Track — slides by current index */}
-          {/* Mobile: 1 card (100%), md: 2 cards (50%), lg: 3 cards (33.33%) */}
           <div
             className="flex transition-transform duration-500 ease-in-out"
             style={{
-              // Each card occupies 100% on mobile, 50% on md, 33.33% on lg
-              // We move by `current` card-widths
-              // Use a CSS custom property trick: set via inline & override in media
               transform: `translateX(calc(-${current} * (100% / 3)))`,
             }}
           >
             {testimonials.map((t, idx) => (
-              <div
+              <motion.div
                 key={idx}
-                className="
-                  w-full shrink-0
-                  sm:w-1/2
-                  lg:w-1/3
-                  px-3
-                "
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.55, delay: idx * 0.08, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
+                className="w-full shrink-0 sm:w-1/2 lg:w-1/3 px-3"
               >
                 <div className="bg-white border border-slate-200 p-7 h-full flex flex-col shadow-sm hover:shadow-md transition-shadow duration-200">
                   {/* Top red rule */}
@@ -193,7 +193,7 @@ export default function TestimonialsSection() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

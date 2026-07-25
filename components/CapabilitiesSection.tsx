@@ -2,6 +2,16 @@
 
 import React, { useState } from "react";
 import { ChevronRight, ArrowRight, Layers, Printer, Sparkles, Cpu, FileText } from "lucide-react";
+import { motion } from "framer-motion";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 32 },
+  visible: (delay = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] as [number, number, number, number], delay },
+  }),
+};
 
 const capabilities = [
   {
@@ -75,21 +85,47 @@ export default function CapabilitiesSection({ setQuoteModalOpen }: { setQuoteMod
           
           {/* Sidebar with Titles */}
           <div className="lg:col-span-5 flex flex-col justify-center">
-            <span className="font-heading text-xs font-extrabold uppercase tracking-widest text-primary-light mb-3">
+            <motion.span
+              variants={fadeUp}
+              custom={0}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-60px" }}
+              className="font-heading text-xs font-extrabold uppercase tracking-widest text-primary-light mb-3"
+            >
               END-TO-END PROCESS
-            </span>
-            <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-white tracking-tight mb-6">
+            </motion.span>
+            <motion.h2
+              variants={fadeUp}
+              custom={0.1}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-60px" }}
+              className="font-heading font-extrabold text-3xl sm:text-4xl text-white tracking-tight mb-6"
+            >
               Our Core Manufacturing & Converting Capabilities
-            </h2>
-            <p className="font-sans text-slate-400 text-sm leading-relaxed mb-8">
+            </motion.h2>
+            <motion.p
+              variants={fadeUp}
+              custom={0.2}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-60px" }}
+              className="font-sans text-slate-400 text-sm leading-relaxed mb-8"
+            >
               Shree Harihar Printing Works LLP operates integrated advanced production workflows. Click to explore our machinery line, technologies, and post-press processing modules.
-            </p>
+            </motion.p>
 
             {/* Selector Buttons */}
             <div className="space-y-3">
               {capabilities.map((cap, idx) => (
-                <button
+                <motion.button
                   key={idx}
+                  variants={fadeUp}
+                  custom={0.25 + idx * 0.07}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-40px" }}
                   onClick={() => setActiveCapability(idx)}
                   className={`w-full text-left p-4 hover:bg-slate-900 border transition-all duration-200 flex items-center justify-between group ${
                     activeCapability === idx
@@ -110,13 +146,19 @@ export default function CapabilitiesSection({ setQuoteModalOpen }: { setQuoteMod
                   <ChevronRight className={`h-4 w-4 transition-transform ${
                     activeCapability === idx ? "text-primary-light translate-x-1" : "text-slate-600"
                   }`} />
-                </button>
+                </motion.button>
               ))}
             </div>
           </div>
 
           {/* Active Details tab Panel */}
-          <div className="lg:col-span-7 bg-slate-900/60 p-8 sm:p-12 border border-slate-800 relative min-h-[380px] flex flex-col justify-between">
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as [number, number, number, number], delay: 0.15 }}
+            className="lg:col-span-7 bg-slate-900/60 p-8 sm:p-12 border border-slate-800 relative min-h-[380px] flex flex-col justify-between"
+          >
             {/* Corner accents */}
             <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-primary"></div>
             <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-primary"></div>
@@ -168,7 +210,7 @@ export default function CapabilitiesSection({ setQuoteModalOpen }: { setQuoteMod
                 <ArrowRight className="h-3 w-3" />
               </button>
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>
