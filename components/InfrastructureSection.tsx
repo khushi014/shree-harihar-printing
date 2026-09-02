@@ -9,31 +9,31 @@ const departments = [
     icon: Layers,
     num: "01",
     title: "Prepress",
-    desc: "Advanced plate making systems and structural packaging software ensuring absolute dot precision.",
+    desc: "Advanced plate-making and structural packaging setup, ensuring every job starts with dot-accurate precision before a single sheet is printed.",
   },
   {
     icon: Printer,
     num: "02",
     title: "Printing Department",
-    desc: "High-speed multi-color Heidelberg presses equipped with inline coating and spectrophotometers.",
+    desc: "Heidelberg offset presses (2-color, 4-color + coater, and 6-color + coater) deliver sharp, consistent, high-speed production runs.",
   },
   {
     icon: Settings,
     num: "03",
-    title: "Post Press Department",
-    desc: "Auto coating, blanking, vision inspection arrays, automatic punching machines, and folder gluers.",
+    title: "Post-Press Department",
+    desc: "Auto Aqua/UV coating, drip-off finishing, precision blanking, automatic carton inspection, and both manual and fully automatic punching.",
   },
   {
     icon: Package,
     num: "04",
-    title: "Flexo Label Printing",
-    desc: "Roll-fed premium pressure-sensitive labels, precision varnishes, and commercial packaging stickers.",
+    title: "Folding & Gluing",
+    desc: "Auto side and lock-bottom folder-gluers, plus a Bobst Visionfold line with Accubraille capability for Braille-compliant packaging.",
   },
   {
     icon: Cpu,
     num: "05",
-    title: "Insert Printing Division",
-    desc: "High-precision miniature cross folding production for specialized pharma instruction inserts.",
+    title: "Label & Promotional Production",
+    desc: "Stickers and labels run alongside catalogues, standees, brochures, danglers, and calendars, produced with our carton work's quality discipline.",
   },
 ];
 
@@ -68,19 +68,14 @@ export default function InfrastructureSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
-          className="relative z-10 flex flex-col items-center text-center"
+          className="relative z-10 flex flex-col items-center text-center max-w-4xl px-4"
         >
-          <h2 className="font-heading text-3xl min-[400px]:text-4xl sm:text-[4rem] lg:text-[5.5rem] leading-[1.1] text-white whitespace-nowrap sm:whitespace-normal">
-            Offering shine to
+          <h2 className="font-heading text-3xl min-[400px]:text-4xl sm:text-5xl lg:text-6xl text-white mb-6 leading-tight">
+            Built to Deliver - <br className="sm:hidden" /> Our Production Capability
           </h2>
-          <div className="flex items-center gap-6 mt-2 mb-2">
-            <h2 className="font-heading text-3xl min-[400px]:text-4xl sm:text-[4rem] lg:text-[5.5rem] leading-[1.1] text-white whitespace-nowrap sm:whitespace-normal">
-              excellence printing
-            </h2>
-          </div>
-          <h2 className="font-heading text-3xl min-[400px]:text-4xl sm:text-[4rem] lg:text-[5.5rem] leading-[1.1] text-white whitespace-nowrap sm:whitespace-normal">
-            stuff
-          </h2>
+          <p className="font-sans text-base sm:text-lg lg:text-xl text-white/90 leading-relaxed font-light">
+            Everything we produce moves through five in-house divisions, giving us tighter control over quality, cost, and turnaround than a business relying on outsourced vendors ever could.
+          </p>
         </motion.div>
       </div>
 
@@ -119,6 +114,13 @@ export default function InfrastructureSection() {
             );
           })}
 
+        </div>
+
+        {/* Machinery Link */}
+        <div className="mt-16 sm:mt-20 flex justify-center text-center">
+          <a href="#gallery" className="font-heading text-[13px] sm:text-sm font-black text-slate-900 border-b-2 border-slate-900 hover:text-primary hover:border-primary transition-colors pb-1 inline-flex items-center gap-1 uppercase tracking-widest">
+            See Full Machinery & Infrastructure <span className="text-[16px] ml-1 leading-none">→</span>
+          </a>
         </div>
       </div>
 

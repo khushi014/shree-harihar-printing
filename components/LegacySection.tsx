@@ -39,11 +39,13 @@ function StatItem({
   label,
   bordered,
   delay,
+  suffix,
 }: {
   target: number;
   label: string;
   bordered: boolean;
   delay: number;
+  suffix?: string;
 }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
@@ -59,7 +61,7 @@ function StatItem({
       className={`flex flex-col items-center ${bordered ? "md:border-r md:border-slate-200/60" : ""}`}
     >
       <div className="font-heading text-4xl sm:text-5xl lg:text-5xl text-slate-900 mb-3 tracking-tighter flex items-start">
-        <span className="font-light">{count}</span>
+        <span className="font-light">{count}{suffix}</span>
       </div>
       <div className="font-sans text-[10px] sm:text-sm text-slate-400 capitalize tracking-wide font-medium">
         {label}
@@ -104,59 +106,36 @@ export default function LegacySection() {
               custom={0}
               initial="hidden"
               animate={headerInView ? "visible" : "hidden"}
-              className="font-heading font-light text-4xl sm:text-5xl md:text-6xl text-slate-900 tracking-tight mb-12 leading-tight"
+              className="font-heading font-light text-3xl sm:text-4xl md:text-5xl text-slate-900 tracking-tight mb-8 leading-tight"
             >
-              The blueprint for <br className="hidden sm:block" />
-              <span className="font-heading">your</span>{" "}
-              <span className="relative inline-block font-normal">
-                success
+              A Century in Business.<br className="hidden xl:block" />{" "}
+              <span className="relative inline-block font-normal mt-2">
+                A Team That Still Shows Up Like Day One.
                 <span className="absolute bottom-1 left-0 w-full h-1 bg-primary" />
               </span>
             </motion.h2>
 
-            <div className="space-y-10 w-full">
-              {/* Block 1 */}
+            <div className="space-y-6 w-full">
               <motion.div
                 variants={fadeUp}
                 custom={0.15}
                 initial="hidden"
                 animate={headerInView ? "visible" : "hidden"}
-                className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full"
+                className="font-sans text-sm sm:text-base text-slate-500 leading-relaxed pr-4 flex flex-col gap-5"
               >
-                <div className="w-full sm:w-[200px] shrink-0">
-                  <h3 className="font-heading font-semibold text-slate-800 text-[15px] border-b border-slate-900 pb-2 inline-block relative after:content-[''] after:absolute after:bottom-[-1px] after:left-0 after:w-full after:h-[1px] after:bg-slate-900">
-                    <span className="text-primary mr-1">#</span> Innovation &amp; Quality
-                  </h3>
-                </div>
-                <div className="w-full">
-                  <p className="font-sans text-sm sm:text-base text-slate-500 leading-relaxed mb-3 pr-4">
-                    Using high-quality rigid boards and specialty papers to create premium packaging perfect for liquor, jewelry, corporate gifting, and luxury commodities.
-                  </p>
-                  <a href="#about" className="font-heading text-[10px] sm:text-xs font-black text-slate-900 border-b-[1.5px] border-slate-900 hover:text-primary hover:border-primary transition-colors pb-0.5 inline-flex items-center gap-1 uppercase">
-                    Read More <ChevronRight className="w-[10px] h-[10px] sm:w-3 sm:h-3" strokeWidth={3} />
-                  </a>
-                </div>
-              </motion.div>
-
-              {/* Block 2 */}
-              <motion.div
-                variants={fadeUp}
-                custom={0.28}
-                initial="hidden"
-                animate={headerInView ? "visible" : "hidden"}
-                className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full"
-              >
-                <div className="w-full sm:w-[200px] shrink-0">
-                  <h3 className="font-heading font-semibold text-slate-800 text-[15px] border-b border-slate-900 pb-2 inline-block relative after:content-[''] after:absolute after:bottom-[-1px] after:left-0 after:w-full after:h-[1px] after:bg-slate-900">
-                    <span className="text-primary mr-1">#</span> Core Values &amp; Trust
-                  </h3>
-                </div>
-                <div className="w-full">
-                  <p className="font-sans text-xs sm:text-sm text-slate-500 leading-relaxed mb-3 pr-4">
-                    Achieving the highest customer satisfaction through teamwork and uncompromised perfection. A century of transparent and customer-committed solutions since 1921.
-                  </p>
-                  <a href="#legacy" className="font-heading text-[10px] sm:text-xs font-black text-slate-900 border-b-[1.5px] border-slate-900 hover:text-primary hover:border-primary transition-colors pb-0.5 inline-flex items-center gap-1 uppercase">
-                    Read More <ChevronRight className="w-[10px] h-[10px] sm:w-3 sm:h-3" strokeWidth={3} />
+                <p>
+                  We've been asked more than once how a business stays relevant for over a hundred years. The honest answer: we never stopped treating each order like it was our first big client.
+                </p>
+                <p>
+                  Five generations of the same family have run Shree Harihar Printing Works since 1921, through changes in technology, materials, and industry regulation, without losing the thing that got us here: a stubborn, uncompromising standard for quality and a genuine respect for the brands that hand us their packaging.
+                </p>
+                <p>
+                  Today we operate as a full-scale, in-house print-pack company—prepress, offset printing, coating, punching, folding-gluing, and vision inspection—all under one roof at our facility near Ahmedabad. That means fewer handoffs, fewer surprises, and packaging that shows up exactly the way you approved it.
+                </p>
+                
+                <div className="mt-4">
+                  <a href="#about" className="font-heading text-xs sm:text-sm font-black text-slate-900 border-b-[1.5px] border-slate-900 hover:text-primary hover:border-primary transition-colors pb-0.5 inline-flex items-center gap-1 uppercase tracking-wider">
+                    Read Our Full Story <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1" strokeWidth={3} />
                   </a>
                 </div>
               </motion.div>
@@ -166,11 +145,23 @@ export default function LegacySection() {
         </div>
 
         {/* Bottom Stats Row — animated counters */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-4 text-center border-t border-slate-200/60 pt-12 md:pt-16">
-          <StatItem target={1921} label="Year Established" bordered delay={0} />
-          <StatItem target={5}    label="Generations"      bordered delay={0.12} />
-          <StatItem target={101}  label="Years of Trust"   bordered delay={0.24} />
-          <StatItem target={4}    label="Press Divisions"  bordered={false} delay={0.36} />
+        <div className="border-t border-slate-200/60 pt-16 md:pt-20">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center font-heading font-light text-3xl sm:text-4xl text-slate-900 tracking-tight mb-12"
+          >
+            100+ Years of Printing Excellence
+          </motion.h2>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-4 text-center">
+            <StatItem target={1921} label="Year Established" bordered delay={0} />
+            <StatItem target={5}    label="Generations of Family Leadership" bordered delay={0.12} />
+            <StatItem target={100}  label="Years of Client Trust" bordered delay={0.24} suffix="+" />
+            <StatItem target={5}    label="In-House Press & Production Divisions" bordered={false} delay={0.36} />
+          </div>
         </div>
       </div>
     </section>

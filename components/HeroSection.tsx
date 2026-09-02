@@ -12,16 +12,16 @@ export default function HeroSection() {
       align: "left",
       preTitle: "High-Volume B2B",
       title: "Precision Packaging",
-      desc: "State-of-the-art mono cartons and corrugated solutions designed for automated pharmaceutical and FMCG cartoning lines.",
+      desc: "Mono cartons and structural packaging built for automated pharmaceutical and FMCG cartoning lines.",
       cta: "Explore Services!",
       action: "#capabilities"
     },
     {
       image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1920",
       align: "right",
-      preTitle: "Breathing life",
-      title: "into your print",
-      desc: "Absolute color consistency, faster turnarounds, and robust structural designs to elevate your brand presence globally.",
+      preTitle: "Breathing Life",
+      title: "Into Your Print",
+      desc: "Consistent color, faster turnarounds, and packaging that elevates your brand on every shelf.",
       cta: "Contact Us!",
       action: "#contact"
     },
@@ -30,7 +30,7 @@ export default function HeroSection() {
       align: "left",
       preTitle: "Uncompromised",
       title: "Quality Control",
-      desc: "100% digital vision inspection ensuring zero-defect production in highly regulated industry packaging requirements.",
+      desc: "Carton inspection and finishing processes built for zero-defect production in regulated industries.",
       cta: "View Infrastructure",
       action: "#infrastructure"
     }

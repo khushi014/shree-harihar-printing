@@ -17,8 +17,8 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Shree Harihar Printing Works LLP | Heritage B2B Print & Packaging Solutions",
-  description: "A heritage B2B print-pack leader since 1921. 5 generations of precision printing, corporate packaging, mono cartons, Braille cartons, and flexo labels in Ahmedabad.",
+  title: "Shree Harihar Printing Works | Carton & Packaging Printing",
+  description: "A B2B print-pack company in Ahmedabad. Precision carton, label & promotional printing for pharma and FMCG brands. Request a quote today.",
   keywords: ["Shree Harihar Printing Works", "Print Pack Ahmedabad", "Mono Cartons Manufacturer", "Braille Cartons", "Industrial Packaging India", "B2B Printing India", "Heidelberg Printing India", "Miroli Plant Ahmedabad"],
 };
 

@@ -16,22 +16,22 @@ const fadeUp = {
 const cards = [
   {
     title: "FMCG Cartons",
-    desc: "From Agarbatti boxes to soap and perfume boxes, our precise solutions keep pace without delivery glitches.",
+    desc: "From agarbatti boxes to soap and perfume packaging, our fast, precise production keeps FMCG brands moving without delivery glitches.",
     img: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=600"
   },
   {
-    title: "Sticker Label",
-    desc: "Small in size but creates a big impact in pushing the product. Always providing the best quality solutions.",
+    title: "Sticker & Label Printing",
+    desc: "Small in size, big in impact, bottle labels, product labels, and promotional stickers are finished to the same standard as our largest carton orders.",
     img: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&q=80&w=600"
   },
   {
-    title: "Promo Materials",
-    desc: "Fulfilling out-of-the-box creative demands with our range of catalogs, standees, brochures & danglers.",
+    title: "Promotional Materials",
+    desc: "Catalogues, standees, brochures, posters, and danglers built to fulfill out-of-the-box creative briefs for consumer brands.",
     img: "https://images.unsplash.com/photo-1541462608143-67571c6738dd?auto=format&fit=crop&q=80&w=600"
   },
   {
-    title: "Pharma Packaging",
-    desc: "Compliance-driven printing for vials, injectables, liquids, and sterile items using high-quality precision.",
+    title: "Pharmaceutical Packaging",
+    desc: "Compliance-driven printing for vials, injectables, liquids, and sterile products, where precision isn't optional.",
     img: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=600"
   }
 ];
@@ -44,23 +44,21 @@ export default function SuccessFutureSection() {
 
       <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-        {/* Header Row */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 lg:mb-24">
+        {/* Header Block */}
+        <div className="flex flex-col items-center text-center mx-auto w-full max-w-4xl gap-6 mb-16 lg:mb-20">
           <motion.h2
             variants={fadeUp}
             custom={0}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
-            className="font-heading text-[2.5rem] sm:text-[3.5rem] lg:text-[4rem] leading-[1.1] text-slate-900 max-w-2xl"
+            className="font-heading text-[2.5rem] sm:text-[3.5rem] lg:text-[4.5rem] leading-[1.1] text-slate-900"
           >
-            Shree Harihar creates things for <br />
-            your{" "}
+            What We{" "}
             <span className="relative inline-block">
-              success
-              <span className="absolute bottom-2 left-0 w-full h-[4px] bg-primary"></span>
-            </span>{" "}
-            future
+              Print
+              <span className="absolute bottom-2 lg:bottom-4 left-0 w-full h-[4px] bg-primary"></span>
+            </span>
           </motion.h2>
 
           <motion.div
@@ -69,16 +67,16 @@ export default function SuccessFutureSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
-            className="max-w-md flex flex-col items-start gap-4 pb-2"
+            className="flex flex-col items-center gap-5 pb-2 w-full"
           >
-            <p className="font-sans text-[15px] text-slate-500 leading-relaxed font-medium">
-              We can help you develop and execute transparent and traditional strategy with closely related environmental and business priorities.
+            <p className="font-sans text-[16px] sm:text-[18px] text-slate-600 leading-relaxed font-medium">
+              We don't just print; we solve packaging problems for industries that can't afford to get it wrong.
             </p>
             <a
               href="#services"
-              className="font-sans text-[15px] font-bold text-slate-900 hover:text-primary transition-colors inline-flex items-center gap-1 border-b-[3px] border-slate-900 hover:border-primary pb-1"
+              className="font-sans text-[14px] font-bold text-slate-900 hover:text-primary transition-colors inline-flex items-center gap-1 border-b-[3px] border-slate-900 hover:border-primary pb-1 uppercase tracking-wide mt-2"
             >
-              Awesome Services <ChevronRight className="w-4 h-4 ml-1" />
+              View All Services <ChevronRight className="w-4 h-4 ml-1" />
             </a>
           </motion.div>
         </div>

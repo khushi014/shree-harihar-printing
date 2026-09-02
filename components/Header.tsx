@@ -36,11 +36,12 @@ export default function Header() {
           {/* Desktop Nav Links */}
           <nav className="hidden lg:flex items-center space-x-6">
             {[
-              { name: "HOME", href: "#" },
-              { name: "ABOUT", href: "#legacy" },
-              { name: "SERVICES", href: "#capabilities" },
-              { name: "GALLARY", href: "#industries" },
-              { name: "CONTACT US", href: "#contact" },
+              { name: "HOME", href: "/" },
+              { name: "ABOUT", href: "/about" },
+              { name: "SERVICES", href: "/services" },
+              { name: "INDUSTRIES", href: "/industry" },
+              { name: "GALLERY", href: "/gallery" },
+              { name: "CONTACT US", href: "/contact" },
             ].map((link) => (
               <a
                 key={link.name}
@@ -102,11 +103,12 @@ export default function Header() {
 
               <div className="flex flex-col space-y-2 pt-6">
                 {[
-                  { name: "HOME", href: "#" },
-                  { name: "ABOUT", href: "#legacy" },
-                  { name: "SERVICES", href: "#capabilities" },
-                  { name: "GALLARY", href: "#industries" },
-                  { name: "CONTACT US", href: "#contact" },
+                  { name: "HOME", href: "/" },
+                  { name: "ABOUT", href: "/about" },
+                  { name: "SERVICES", href: "/services" },
+                  { name: "INDUSTRIES", href: "/industry" },
+                  { name: "GALLERY", href: "/gallery" },
+                  { name: "CONTACT US", href: "/contact" },
                 ].map((link) => (
                   <a
                     key={link.name}

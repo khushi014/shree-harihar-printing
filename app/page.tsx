@@ -9,6 +9,7 @@ import InfrastructureSection from "../components/InfrastructureSection";
 import SuccessFutureSection from "../components/SuccessFutureSection";
 import TestimonialsSection from "../components/TestimonialsSection";
 import StrongCoreSection from "../components/StrongCoreSection";
+import ContactSection from "../components/ContactSection";
 import FooterSection from "../components/FooterSection";
 
 import { X, ClipboardList, CheckCircle } from "lucide-react";
@@ -61,6 +62,8 @@ export default function Home() {
       <TestimonialsSection />
       
       <StrongCoreSection />
+      
+      <ContactSection />
       
       <FooterSection setQuoteModalOpen={setQuoteModalOpen} />
 

@@ -16,39 +16,33 @@ const fadeUp = {
 const strongValues = [
   {
     id: "01",
-    title: "Quality",
-    desc: "Uncompromised perfection in every print, verified by strict standard checks.",
+    title: "Five generations, one standard",
+    desc: "Founded in 1921, still family-led, still quality-obsessed",
     img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: "02",
-    title: "Promise",
-    desc: "Delivering tailored printing and packaging solutions exactly when required without fail.",
+    title: "Full in-house production",
+    desc: "prepress to finishing, under one roof, under our control",
     img: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: "03",
-    title: "Teamwork",
-    desc: "A harmonious and safe work culture fostering passionate and committed workforce synergy.",
+    title: "On-time delivery, without exception",
+    desc: "from a single sticker run to a full carton order",
     img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: "04",
-    title: "Appreciation",
-    desc: "Valuing our people and processes, creating a positive and appreciating work environment.",
+    title: "Multi-industry expertise",
+    desc: "pharma-grade precision, FMCG-grade creativity",
     img: "https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&q=80&w=800"
   },
   {
     id: "05",
-    title: "Customer Satisfaction",
-    desc: "Serving as partners for growth and achieving the highest customer satisfaction for decades.",
+    title: "Compliance-ready capability",
+    desc: "including Braille-embossed, regulation-sensitive cartons",
     img: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    id: "06",
-    title: "Innovation",
-    desc: "A strong penchant for adopting new technologies and processes to maintain our stronghold on craft.",
-    img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800"
   }
 ];
 
@@ -64,38 +58,19 @@ export default function StrongCoreSection() {
       <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 flex flex-col items-center">
         
         {/* Section Headings centered */}
-        <div ref={headingRef} className="text-center max-w-4xl mx-auto mb-16 lg:mb-24 flex flex-col items-center">
+        <div ref={headingRef} className="text-center max-w-4xl mx-auto mb-16 lg:mb-20 flex flex-col items-center">
           <motion.h2
             variants={fadeUp}
             custom={0}
             initial="hidden"
             animate={headingInView ? "visible" : "hidden"}
-            className="font-heading text-[2.5rem] sm:text-[3.5rem] lg:text-[4.5rem] leading-[1.1] text-slate-900 mb-8 w-full block"
+            className="font-heading text-[2.5rem] sm:text-[3.5rem] lg:text-[4.5rem] leading-[1.1] text-slate-900 mb-4 w-full block"
           >
-            The <span className="relative inline-block">
-              strong core
-              <span className="absolute bottom-2 left-0 w-full h-[3px] bg-primary" />
+            What Sets <span className="relative inline-block">
+              Us Apart
+              <span className="absolute bottom-2 left-0 w-full h-[4px] bg-primary" />
             </span>
           </motion.h2>
-          
-          <motion.p
-            variants={fadeUp}
-            custom={0.15}
-            initial="hidden"
-            animate={headingInView ? "visible" : "hidden"}
-            className="font-sans text-base sm:text-lg text-slate-600 leading-relaxed font-medium mb-6"
-          >
-            Established in 1921, Shree Harihar Printing Works has been holding the baton of quality, uncompromised perfection and promised solutions making it a pioneer name in the industry. The kudos for the same goes to the unwavering founding values which have stayed unshaken despite every odd and challenging.
-          </motion.p>
-          <motion.span
-            variants={fadeUp}
-            custom={0.28}
-            initial="hidden"
-            animate={headingInView ? "visible" : "hidden"}
-            className="font-heading text-sm font-bold uppercase tracking-widest text-primary block mt-4"
-          >
-            These are the values that speak of...
-          </motion.span>
         </div>
 
         {/* Hover Layout Container */}
@@ -174,12 +149,6 @@ export default function StrongCoreSection() {
             </div>
           </div>
 
-        </div>
-
-        <div className="mt-20 max-w-3xl text-center flex justify-center px-4">
-          <p className="font-sans text-base sm:text-[17px] text-slate-600 leading-relaxed font-semibold italic border-l-4 border-primary pl-6 py-2 text-left">
-            "Together they form a strong core helping the company fulfill its vision and mission of scaling new heights of success in the printing industry."
-          </p>
         </div>
 
       </div>
