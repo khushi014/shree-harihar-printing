@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Layers, Printer, Cpu, Settings, Package } from "lucide-react";
 
@@ -9,31 +10,31 @@ const departments = [
     icon: Layers,
     num: "01",
     title: "Prepress",
-    desc: "Advanced plate-making and structural packaging setup, ensuring every job starts with dot-accurate precision before a single sheet is printed.",
+    desc: "Advanced plate-making and structural setup ensures every job starts with dot-accurate precision.",
   },
   {
     icon: Printer,
     num: "02",
-    title: "Printing Department",
-    desc: "Heidelberg offset presses (2-color, 4-color + coater, and 6-color + coater) deliver sharp, consistent, high-speed production runs.",
+    title: "Printing",
+    desc: "Multi-color offset presses deliver sharp, consistent, high-speed production runs for bulk orders.",
   },
   {
     icon: Settings,
     num: "03",
-    title: "Post-Press Department",
-    desc: "Auto Aqua/UV coating, drip-off finishing, precision blanking, automatic carton inspection, and both manual and fully automatic punching.",
+    title: "Post-Press",
+    desc: "Automated coating, precision blanking, and vision inspection built for zero-defect output.",
   },
   {
     icon: Package,
     num: "04",
     title: "Folding & Gluing",
-    desc: "Auto side and lock-bottom folder-gluers, plus a Bobst Visionfold line with Accubraille capability for Braille-compliant packaging.",
+    desc: "High-speed automated folding lines, fully capable of compliance-ready and Braille-embossed packaging.",
   },
   {
     icon: Cpu,
     num: "05",
-    title: "Label & Promotional Production",
-    desc: "Stickers and labels run alongside catalogues, standees, brochures, danglers, and calendars, produced with our carton work's quality discipline.",
+    title: "Label & Promo",
+    desc: "Stickers, labels, and marketing collateral produced with the exact same quality discipline as our cartons.",
   },
 ];
 
@@ -70,8 +71,8 @@ export default function InfrastructureSection() {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
           className="relative z-10 flex flex-col items-center text-center max-w-4xl px-4"
         >
-          <h2 className="font-heading text-3xl min-[400px]:text-4xl sm:text-5xl lg:text-6xl text-white mb-6 leading-tight">
-            Built to Deliver - <br className="sm:hidden" /> Our Production Capability
+          <h2 className="font-heading font-light text-3xl sm:text-4xl lg:text-5xl text-white mb-6 leading-tight">
+            Built to Deliver - <span className="font-bold text-primary">Our Production Capability</span>
           </h2>
           <p className="font-sans text-base sm:text-lg lg:text-xl text-white/90 leading-relaxed font-light">
             Everything we produce moves through five in-house divisions, giving us tighter control over quality, cost, and turnaround than a business relying on outsourced vendors ever could.
@@ -118,9 +119,9 @@ export default function InfrastructureSection() {
 
         {/* Machinery Link */}
         <div className="mt-16 sm:mt-20 flex justify-center text-center">
-          <a href="#gallery" className="font-heading text-[13px] sm:text-sm font-black text-slate-900 border-b-2 border-slate-900 hover:text-primary hover:border-primary transition-colors pb-1 inline-flex items-center gap-1 uppercase tracking-widest">
+          <Link href="/gallery" className="font-heading text-[13px] sm:text-sm font-black text-slate-900 border-b-2 border-slate-900 hover:text-primary hover:border-primary transition-colors pb-1 inline-flex items-center gap-1 uppercase tracking-widest">
             See Full Machinery & Infrastructure <span className="text-[16px] ml-1 leading-none">→</span>
-          </a>
+          </Link>
         </div>
       </div>
 

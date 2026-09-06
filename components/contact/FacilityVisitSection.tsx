@@ -51,12 +51,12 @@ export default function FacilityVisitSection() {
           {/* Visual block */}
           <div className="w-full md:w-2/5 lg:w-1/3 h-64 md:h-full relative overflow-hidden bg-slate-800">
              <img 
-               src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&q=80&w=800"
-               alt="Shree Harihar printing facility tour"
-               className="absolute inset-0 w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700 opacity-60 md:opacity-80"
+               src="/images/factory_team_craft.jpg"
+               alt="Plant manager and engineers reviewing equipment on the factory floor during a facility tour"
+               className="absolute inset-0 w-full h-full object-cover transition-all duration-700 opacity-90 hover:opacity-100 hover:scale-105 filter saturate-105"
              />
-             <div className="absolute inset-0 bg-gradient-to-r from-slate-900 to-transparent hidden md:block"></div>
-             <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent block md:hidden"></div>
+             <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/60 to-transparent hidden md:block"></div>
+             <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent block md:hidden"></div>
           </div>
 
         </div>

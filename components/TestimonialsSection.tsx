@@ -45,7 +45,7 @@ const testimonials = [
     role: "Head of Procurement, Emami Group",
     rating: 5,
     quote:
-      "Their 100-year legacy isn't just history — it shows in how meticulous and professional every interaction is. We trust them completely.",
+      "Their 100-year legacy isn't just history - it shows in how meticulous and professional every interaction is. We trust them completely.",
   },
 ];
 
@@ -102,7 +102,7 @@ export default function TestimonialsSection() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-        {/* Heading — scroll animated */}
+        {/* Heading - scroll animated */}
         <motion.div
           initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -113,12 +113,8 @@ export default function TestimonialsSection() {
           <span className="font-heading text-xs font-bold uppercase tracking-[0.25em] text-primary block mb-3">
             Client Voices
           </span>
-          <h2 className="font-heading text-[2rem] sm:text-[2.75rem] lg:text-[3.25rem] leading-[1.15] text-slate-900">
-            What our clients say{" "}
-            <span className="relative inline-block">
-              about us
-              <span className="absolute -bottom-1 left-0 w-full h-0.75 bg-primary" />
-            </span>
+          <h2 className="font-heading font-light text-3xl sm:text-4xl lg:text-5xl leading-tight text-slate-900">
+            What Our Clients Say <span className="font-bold text-primary">About Us</span>
           </h2>
           <p className="font-sans text-[15px] sm:text-base text-slate-500 mt-5 max-w-lg mx-auto leading-relaxed">
             Over a century of craftsmanship, echoed by the brands that rely on us every single day.
@@ -205,11 +201,10 @@ export default function TestimonialsSection() {
               key={idx}
               onClick={() => { setCurrent(idx); resetTimer(); }}
               aria-label={`Go to slide ${idx + 1}`}
-              className={`rounded-full transition-all duration-300 ${
-                idx === current
+              className={`rounded-full transition-all duration-300 ${idx === current
                   ? "bg-primary w-6 h-2"
                   : "bg-zinc-400 hover:bg-zinc-500 w-2 h-2"
-              }`}
+                }`}
             />
           ))}
         </div>

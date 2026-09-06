@@ -41,9 +41,9 @@ const fadeUp = {
   }),
 };
 
-export default function ContactSection() {
+export default function ContactSection({ dark = false }: { dark?: boolean }) {
   const [form, setForm] = useState({
-    name: "", company: "", email: "", phone: "", message: "",
+    name: "", company: "", email: "", phone: "", industry: "", productNeeded: "", message: "",
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -56,15 +56,22 @@ export default function ContactSection() {
       setSubmitted(true);
       setTimeout(() => {
         setSubmitted(false);
-        setForm({ name: "", company: "", email: "", phone: "", message: "" });
+        setForm({ name: "", company: "", email: "", phone: "", industry: "", productNeeded: "", message: "" });
       }, 3500);
     }, 900);
   };
 
   return (
-    <section id="contact" className="py-20 lg:py-28 bg-white border-t border-slate-200">
-      <div className="max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8">
-        
+    <section
+      id="contact"
+      className={`py-20 lg:py-28 border-t transition-colors ${
+        dark
+          ? "bg-slate-900 border-slate-800 text-white"
+          : "bg-white border-slate-200 text-slate-800"
+      }`}
+    >
+      <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Header Block */}
         <div className="flex flex-col items-center text-center mx-auto w-full max-w-4xl gap-6 mb-16 lg:mb-20">
           <motion.h2
@@ -73,13 +80,11 @@ export default function ContactSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
-            className="font-heading font-light text-[2.5rem] sm:text-[3.5rem] lg:text-[4.5rem] leading-[1.1] text-slate-900"
+            className={`font-heading font-light text-3xl sm:text-4xl lg:text-5xl leading-tight ${
+              dark ? "text-white" : "text-slate-900"
+            }`}
           >
-            Get In{" "}
-            <span className="relative inline-block font-normal">
-              Touch
-              <span className="absolute bottom-2 lg:bottom-4 left-0 w-full h-[4px] bg-primary"></span>
-            </span>
+            Get In <span className="font-bold text-primary">Touch</span>
           </motion.h2>
 
           <motion.p
@@ -88,14 +93,16 @@ export default function ContactSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
-            className="font-sans text-[16px] sm:text-[18px] text-slate-600 leading-relaxed font-medium max-w-2xl"
+            className={`font-sans text-[16px] sm:text-[18px] leading-relaxed font-medium max-w-2xl ${
+              dark ? "text-slate-300" : "text-slate-600"
+            }`}
           >
-            Whether you need pharma packaging, FMCG cartons, or custom print solutions — our team is ready to help you bring your vision to life.
+            Whether you need pharma packaging, FMCG cartons, or custom print solutions - our team is ready to help you bring your vision to life.
           </motion.p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          
+
           {/* Left: Contact Info */}
           <motion.div
             variants={fadeUp}
@@ -107,15 +114,30 @@ export default function ContactSection() {
           >
             {contactDetails.map((item, idx) => (
               <div key={idx} className="flex items-start gap-5">
-                <div className="w-12 h-12 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0">
-                  <item.icon className="w-5 h-5 text-primary" />
+                <div
+                  className={`w-12 h-12 rounded-full border flex items-center justify-center shrink-0 ${
+                    dark
+                      ? "bg-slate-800/80 border-slate-700 text-primary"
+                      : "bg-slate-50 border-slate-200 text-primary"
+                  }`}
+                >
+                  <item.icon className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="font-heading font-bold text-lg text-slate-900 mb-2">
+                  <h3
+                    className={`font-heading font-bold text-lg mb-2 ${
+                      dark ? "text-white" : "text-slate-900"
+                    }`}
+                  >
                     {item.title}
                   </h3>
                   {item.lines.map((line, i) => (
-                    <p key={i} className="font-sans text-slate-600 leading-relaxed">
+                    <p
+                      key={i}
+                      className={`font-sans leading-relaxed ${
+                        dark ? "text-slate-300" : "text-slate-600"
+                      }`}
+                    >
                       {line}
                     </p>
                   ))}
@@ -123,7 +145,11 @@ export default function ContactSection() {
                     href={item.link}
                     target={item.icon === MapPin ? "_blank" : undefined}
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 mt-3 font-heading text-sm font-bold text-slate-900 border-b-2 border-slate-900 hover:text-primary hover:border-primary transition-colors uppercase tracking-wide pb-0.5"
+                    className={`inline-flex items-center gap-1 mt-3 font-heading text-sm font-bold border-b-2 hover:text-primary hover:border-primary transition-colors uppercase tracking-wide pb-0.5 ${
+                      dark
+                        ? "text-white border-slate-400"
+                        : "text-slate-900 border-slate-900"
+                    }`}
                   >
                     {item.linkText} {item.icon === MapPin && <ExternalLink className="w-3 h-3 ml-0.5" />}
                   </a>
@@ -146,41 +172,69 @@ export default function ContactSection() {
                 <div className="w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center mb-6">
                   <CheckCircle className="w-8 h-8 text-emerald-600" />
                 </div>
-                <h4 className="font-heading font-bold text-slate-900 text-2xl mb-3">
+                <h4
+                  className={`font-heading font-bold text-2xl mb-3 ${
+                    dark ? "text-white" : "text-slate-900"
+                  }`}
+                >
                   Message Received
                 </h4>
-                <p className="font-sans text-slate-600 max-w-sm">
+                <p
+                  className={`font-sans max-w-sm ${
+                    dark ? "text-slate-300" : "text-slate-600"
+                  }`}
+                >
                   Thank you for reaching out. Our team will respond within 24 business hours.
                 </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
-                <h3 className="font-heading font-bold text-2xl text-slate-900 mb-8 border-b border-slate-200 pb-4">
-                  Send us a message
+                <h3
+                  className={`font-heading font-light text-2xl sm:text-3xl mb-6 ${
+                    dark ? "text-white" : "text-slate-900"
+                  }`}
+                >
+                  Send Us a <span className="font-bold text-primary">Message</span>
                 </h3>
-                
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="block font-heading text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+                    <label
+                      className={`block font-heading text-xs font-bold uppercase tracking-wider mb-2 ${
+                        dark ? "text-slate-300" : "text-slate-700"
+                      }`}
+                    >
                       Full Name <span className="text-primary">*</span>
                     </label>
                     <input
                       required
                       type="text"
                       placeholder="e.g. Rajesh Mehta"
-                      className="w-full bg-transparent border-b-2 border-slate-300 px-0 py-3 text-base font-sans text-slate-900 placeholder:text-slate-400 focus:border-primary focus:ring-0 outline-none transition-colors"
+                      className={`w-full bg-transparent border-b-2 px-0 py-3 text-base font-sans focus:border-primary focus:ring-0 outline-none transition-colors ${
+                        dark
+                          ? "border-slate-700 text-white placeholder:text-slate-500"
+                          : "border-slate-300 text-slate-900 placeholder:text-slate-400"
+                      }`}
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
                     />
                   </div>
                   <div>
-                    <label className="block font-heading text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+                    <label
+                      className={`block font-heading text-xs font-bold uppercase tracking-wider mb-2 ${
+                        dark ? "text-slate-300" : "text-slate-700"
+                      }`}
+                    >
                       Company
                     </label>
                     <input
                       type="text"
                       placeholder="e.g. Sun Pharma Ltd."
-                      className="w-full bg-transparent border-b-2 border-slate-300 px-0 py-3 text-base font-sans text-slate-900 placeholder:text-slate-400 focus:border-primary focus:ring-0 outline-none transition-colors"
+                      className={`w-full bg-transparent border-b-2 px-0 py-3 text-base font-sans focus:border-primary focus:ring-0 outline-none transition-colors ${
+                        dark
+                          ? "border-slate-700 text-white placeholder:text-slate-500"
+                          : "border-slate-300 text-slate-900 placeholder:text-slate-400"
+                      }`}
                       value={form.company}
                       onChange={(e) => setForm({ ...form, company: e.target.value })}
                     />
@@ -189,64 +243,141 @@ export default function ContactSection() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="block font-heading text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+                    <label
+                      className={`block font-heading text-xs font-bold uppercase tracking-wider mb-2 ${
+                        dark ? "text-slate-300" : "text-slate-700"
+                      }`}
+                    >
                       Email address <span className="text-primary">*</span>
                     </label>
                     <input
                       required
                       type="email"
                       placeholder="you@company.com"
-                      className="w-full bg-transparent border-b-2 border-slate-300 px-0 py-3 text-base font-sans text-slate-900 placeholder:text-slate-400 focus:border-primary focus:ring-0 outline-none transition-colors"
+                      className={`w-full bg-transparent border-b-2 px-0 py-3 text-base font-sans focus:border-primary focus:ring-0 outline-none transition-colors ${
+                        dark
+                          ? "border-slate-700 text-white placeholder:text-slate-500"
+                          : "border-slate-300 text-slate-900 placeholder:text-slate-400"
+                      }`}
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
                     />
                   </div>
                   <div>
-                    <label className="block font-heading text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+                    <label
+                      className={`block font-heading text-xs font-bold uppercase tracking-wider mb-2 ${
+                        dark ? "text-slate-300" : "text-slate-700"
+                      }`}
+                    >
                       Phone Number
                     </label>
                     <input
                       type="tel"
                       placeholder="+91 98765 43210"
-                      className="w-full bg-transparent border-b-2 border-slate-300 px-0 py-3 text-base font-sans text-slate-900 placeholder:text-slate-400 focus:border-primary focus:ring-0 outline-none transition-colors"
+                      className={`w-full bg-transparent border-b-2 px-0 py-3 text-base font-sans focus:border-primary focus:ring-0 outline-none transition-colors ${
+                        dark
+                          ? "border-slate-700 text-white placeholder:text-slate-500"
+                          : "border-slate-300 text-slate-900 placeholder:text-slate-400"
+                      }`}
                       value={form.phone}
                       onChange={(e) => setForm({ ...form, phone: e.target.value })}
                     />
                   </div>
                 </div>
 
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label
+                      className={`block font-heading text-xs font-bold uppercase tracking-wider mb-2 ${
+                        dark ? "text-slate-300" : "text-slate-700"
+                      }`}
+                    >
+                      Industry
+                    </label>
+                    <select
+                      className={`w-full bg-transparent border-b-2 px-0 py-3 text-base font-sans focus:border-primary focus:ring-0 outline-none transition-colors cursor-pointer ${
+                        dark
+                          ? "border-slate-700 text-white [&>option]:bg-slate-900 [&>option]:text-white"
+                          : "border-slate-300 text-slate-900 [&>option]:bg-white [&>option]:text-slate-900"
+                      }`}
+                      value={form.industry}
+                      onChange={(e) => setForm({ ...form, industry: e.target.value })}
+                    >
+                      <option value="">Select Industry</option>
+                      <option value="Pharmaceutical">Pharmaceutical</option>
+                      <option value="FMCG & Personal Care">FMCG &amp; Personal Care</option>
+                      <option value="Food & Beverage">Food &amp; Beverage</option>
+                      <option value="Nutraceuticals">Nutraceuticals</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label
+                      className={`block font-heading text-xs font-bold uppercase tracking-wider mb-2 ${
+                        dark ? "text-slate-300" : "text-slate-700"
+                      }`}
+                    >
+                      Product Needed
+                    </label>
+                    <select
+                      className={`w-full bg-transparent border-b-2 px-0 py-3 text-base font-sans focus:border-primary focus:ring-0 outline-none transition-colors cursor-pointer ${
+                        dark
+                          ? "border-slate-700 text-white [&>option]:bg-slate-900 [&>option]:text-white"
+                          : "border-slate-300 text-slate-900 [&>option]:bg-white [&>option]:text-slate-900"
+                      }`}
+                      value={form.productNeeded}
+                      onChange={(e) => setForm({ ...form, productNeeded: e.target.value })}
+                    >
+                      <option value="">Select Product Needed</option>
+                      <option value="Carton Packaging">Carton Packaging</option>
+                      <option value="Sticker & Label">Sticker &amp; Label</option>
+                      <option value="Promotional Print">Promotional Print</option>
+                      <option value="Not Sure">Not Sure</option>
+                    </select>
+                  </div>
+                </div>
+
                 <div>
-                  <label className="block font-heading text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
-                    Message / Requirements <span className="text-primary">*</span>
+                  <label
+                    className={`block font-heading text-xs font-bold uppercase tracking-wider mb-2 ${
+                      dark ? "text-slate-300" : "text-slate-700"
+                    }`}
+                  >
+                    Project Details / Requirement <span className="text-primary">*</span>
                   </label>
                   <textarea
                     required
                     rows={4}
-                    placeholder="Tell us about your packaging requirements, quantities..."
-                    className="w-full bg-transparent border-b-2 border-slate-300 px-0 py-3 text-base font-sans text-slate-900 placeholder:text-slate-400 focus:border-primary focus:ring-0 outline-none transition-colors resize-none"
+                    placeholder="Tell us about carton specifications, quantities, dimensions, or timelines..."
+                    className={`w-full bg-transparent border-b-2 px-0 py-3 text-base font-sans focus:border-primary focus:ring-0 outline-none transition-colors resize-none ${
+                      dark
+                        ? "border-slate-700 text-white placeholder:text-slate-500"
+                        : "border-slate-300 text-slate-900 placeholder:text-slate-400"
+                    }`}
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                   />
                 </div>
 
-                <div className="pt-4">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-4">
+                  <span
+                    className={`text-xs font-sans ${
+                      dark ? "text-slate-400" : "text-slate-500"
+                    }`}
+                  >
+                    We respect your privacy. All artwork &amp; project specifications remain strictly confidential.
+                  </span>
                   <button
                     type="submit"
                     disabled={loading}
-                    className="bg-slate-900 hover:bg-primary text-white font-heading text-sm font-bold uppercase tracking-widest px-8 py-4 flex items-center justify-center gap-2 transition-colors disabled:opacity-70"
+                    className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-full font-heading font-bold text-xs uppercase tracking-widest transition-all duration-300 shrink-0 cursor-pointer shadow-lg hover:shadow-primary/30"
                   >
                     {loading ? (
-                      <>
-                        <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
-                        </svg>
-                        Sending...
-                      </>
+                      <span>Sending...</span>
                     ) : (
                       <>
                         <Send className="w-4 h-4" />
-                        Submit Enquiry
+                        Send Message
                       </>
                     )}
                   </button>

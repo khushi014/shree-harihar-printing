@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { ChevronRight, ArrowRight, Layers, Printer, Sparkles, Cpu, FileText } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -19,32 +20,32 @@ const capabilities = [
     icon: Layers,
     description: "State-of-the-art CTP (Computer-to-Plate) technology, structural design prototyping, and high-precision color management calibrating matching systems for zero-defect reproduction.",
     details: [
-      "Advanced CAD structural packaging design software",
-      "Esko prepress workflow solutions",
-      "Kodak & Heidelberg CTP systems",
-      "Digital sample plotting & 3D virtual pack proofs"
+      "High-definition CTP plate setting system",
+      "Direct structural CAD sampling & 3D prototyping",
+      "Color spectrometer matching for precise delta-E verification",
+      "Digital soft-proofing with automated preflight checks"
     ]
   },
   {
-    title: "Offset Pressroom (Heidelberg Solutions)",
+    title: "Advanced Offset Printing",
     icon: Printer,
-    description: "Equipped with multi-color Heidelberg sheetfed offset presses featuring inline coater systems, high-speed output, and spectrophotometric color controls to achieve perfect color fidelity.",
+    description: "Multicolor Heidelberg presses delivering unmatched sheet-to-sheet consistency, registration sharpness, and high-speed execution for high-volume orders.",
     details: [
-      "Heidelberg Speedmaster multi-color presses with coater",
-      "Prinect pressroom integration for digital ink presetting",
-      "UV / Conventional hybrid printing systems",
-      "High-density spectrophotometer closed-loop caliber control"
+      "Heidelberg multi-color automated offset machinery",
+      "High-speed inline UV & aqueous coating towers",
+      "Closed-loop spectrophotometric ink control",
+      "Dual-side simultaneous high-speed printing capacity"
     ]
   },
   {
-    title: "Flexographic Label Printing",
+    title: "Value-Added Enhancements",
     icon: Sparkles,
-    description: "Multi-station high precision flexographic presses designed for roll-fed premium pressure-sensitive labels, varnishes, foil decoration, and custom industrial labeling solutions.",
+    description: "Multi-dimensional textural embellishments that command attention on competitive pharmacy counters and high-traffic supermarket aisles.",
     details: [
-      "Roll-to-roll high-speed clean-room flexo lines",
-      "Inline die-cutting, cold foiling & lamination",
-      "Narrow-web labels for pharma & cosmetics",
-      "UV inks with strict adhesive and chemical resistance"
+      "Spot UV, Matt & Gloss varnish effects",
+      "Precision cold & hot foil stamping in varied metallic shades",
+      "Registered blind & multi-level 3D embossing",
+      "Braille embossing meeting European and Indian pharma standards"
     ]
   },
   {
@@ -71,7 +72,7 @@ const capabilities = [
   }
 ];
 
-export default function CapabilitiesSection({ setQuoteModalOpen }: { setQuoteModalOpen: (open: boolean) => void }) {
+export default function CapabilitiesSection({ setQuoteModalOpen }: { setQuoteModalOpen?: (open: boolean) => void }) {
   const [activeCapability, setActiveCapability] = useState(0);
 
   return (
@@ -101,9 +102,9 @@ export default function CapabilitiesSection({ setQuoteModalOpen }: { setQuoteMod
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
-              className="font-heading font-extrabold text-3xl sm:text-4xl text-white tracking-tight mb-6"
+              className="font-heading font-light text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight mb-6 leading-tight"
             >
-              Our Core Manufacturing & Converting Capabilities
+              Our Core <span className="font-bold text-primary">Manufacturing Capabilities</span>
             </motion.h2>
             <motion.p
               variants={fadeUp}
@@ -202,13 +203,13 @@ export default function CapabilitiesSection({ setQuoteModalOpen }: { setQuoteMod
               <span className="text-xs text-slate-500 font-sans">
                 SHW LLP | Ahmedabad, Gujarat
               </span>
-              <button
-                onClick={() => setQuoteModalOpen(true)}
+              <Link
+                href="/contact"
                 className="font-heading text-xs font-bold text-primary-light hover:text-primary transition-colors flex items-center gap-2"
               >
                 Inquire For This Capability
                 <ArrowRight className="h-3 w-3" />
-              </button>
+              </Link>
             </div>
           </motion.div>
 

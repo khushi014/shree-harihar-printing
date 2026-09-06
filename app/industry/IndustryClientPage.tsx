@@ -1,29 +1,26 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Header from "../../components/Header";
 import FooterSection from "../../components/FooterSection";
 import IndustryHeroSection from "../../components/industry/IndustryHeroSection";
 import IndustryListSection from "../../components/industry/IndustryListSection";
+import IndustryCatchAllSection from "../../components/industry/IndustryCatchAllSection";
 import IndustryCTASection from "../../components/industry/IndustryCTASection";
-import QuoteModal from "../../components/QuoteModal";
 
 export default function IndustryClientPage() {
-  const [quoteModalOpen, setQuoteModalOpen] = useState(false);
-
   return (
     <div className="flex-1 w-full bg-slate-50 relative selection:bg-primary selection:text-white font-sans text-slate-800">
       <Header />
       
-      <main className="pt-24 lg:pt-32">
+      <main className="w-full">
         <IndustryHeroSection />
         <IndustryListSection />
-        <IndustryCTASection setQuoteModalOpen={setQuoteModalOpen} />
+        <IndustryCatchAllSection />
+        <IndustryCTASection />
       </main>
 
-      <FooterSection setQuoteModalOpen={setQuoteModalOpen} />
-      
-      <QuoteModal isOpen={quoteModalOpen} onClose={() => setQuoteModalOpen(false)} />
+      <FooterSection />
     </div>
   );
 }

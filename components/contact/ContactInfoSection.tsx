@@ -12,8 +12,8 @@ export default function ContactInfoSection() {
       transition={{ duration: 0.6 }}
       className="flex flex-col h-full"
     >
-      <h2 className="font-heading font-light text-3xl text-slate-900 mb-8">
-        Get in <span className="font-bold relative inline-block text-primary">Touch<span className="absolute bottom-0 left-0 w-full h-[3px] bg-primary/30" /></span>
+      <h2 className="font-heading font-light text-3xl sm:text-4xl text-slate-900 mb-8">
+        Get In <span className="font-bold text-primary">Touch</span>
       </h2>
 
       <div className="space-y-8 mb-10">

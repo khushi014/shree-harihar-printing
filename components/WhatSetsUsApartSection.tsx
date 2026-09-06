@@ -38,7 +38,7 @@ export default function WhatSetsUsApartSection() {
             viewport={{ once: true }}
             className="font-heading font-light text-3xl sm:text-4xl lg:text-5xl text-slate-900"
           >
-            What Sets <span className="font-normal relative inline-block">Us Apart<span className="absolute bottom-1 left-0 w-full h-1 bg-primary" /></span>
+            What Sets <span className="font-bold text-primary">Us Apart</span>
           </motion.h2>
         </div>
 

@@ -1,27 +1,35 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { Users, Heart, Shield, TrendingUp, MapPin, Phone, Mail, ExternalLink } from "lucide-react";
-import Logo from "../assets/image.png";
 
-export default function FooterSection({ setQuoteModalOpen }: { setQuoteModalOpen: (val: boolean) => void }) {
+export default function FooterSection({ setQuoteModalOpen }: { setQuoteModalOpen?: (val: boolean) => void }) {
   return (
     <>
-     
+
 
       {/* FOOTER */}
       <footer className="bg-slate-950 text-white pt-16 pb-12 border-t border-slate-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+        <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-            
+
             {/* Col 1: About/Logo */}
             <div>
               <div className="mb-6">
-                <a href="#" className="inline-block focus:outline-none">
-                  <Image src={Logo} alt="Logo" width={100} height={100}/>
-                </a>
+                <Link href="/" className="inline-block focus:outline-none group">
+                  <div className="bg-white px-3.5 py-2 rounded-xl shadow-xs inline-flex items-center transition-transform duration-200 group-hover:scale-[1.02]">
+                    <Image
+                      src="/logo.png"
+                      alt="Shree Harihar Printing Works LLP"
+                      width={140}
+                      height={42}
+                      className="h-8 w-auto object-contain"
+                    />
+                  </div>
+                </Link>
               </div>
               <p className="font-sans text-xs text-slate-400 leading-relaxed mb-6">
                 Evolved over 5 generations into a complete, high-volume folding carton Print-Pack company serving pharmaceuticals and FMCG industries.
@@ -38,36 +46,36 @@ export default function FooterSection({ setQuoteModalOpen }: { setQuoteModalOpen
               <h4 className="font-heading text-xs font-extrabold uppercase tracking-widest text-slate-300 mb-4 border-l-2 border-primary pl-2">
                 Quick Navigation
               </h4>
-              <ul className="space-y-2 text-xs">
+              <ul className="space-y-2.5 text-xs">
                 <li>
-                  <a href="#" className="text-slate-450 hover:text-primary-light transition-colors font-sans">
-                    Home Page
-                  </a>
+                  <Link href="/" className="text-slate-400 hover:text-white transition-colors font-sans">
+                    Home
+                  </Link>
                 </li>
                 <li>
-                  <a href="#legacy" className="text-slate-450 hover:text-primary-light transition-colors font-sans">
-                    Legacy & Journey
-                  </a>
+                  <Link href="/about" className="text-slate-400 hover:text-white transition-colors font-sans">
+                    About Us &amp; 100-Year Journey
+                  </Link>
                 </li>
                 <li>
-                  <a href="#infrastructure" className="text-slate-450 hover:text-primary-light transition-colors font-sans">
-                    Miroli Infrastructure
-                  </a>
+                  <Link href="/services" className="text-slate-400 hover:text-white transition-colors font-sans">
+                    Printing &amp; Packaging Services
+                  </Link>
                 </li>
                 <li>
-                  <a href="#industries" className="text-slate-450 hover:text-primary-light transition-colors font-sans">
+                  <Link href="/industry" className="text-slate-400 hover:text-white transition-colors font-sans">
                     Industries Served
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#products" className="text-slate-450 hover:text-primary-light transition-colors font-sans">
-                    Packaging Products
-                  </a>
+                  <Link href="/gallery" className="text-slate-400 hover:text-white transition-colors font-sans">
+                    Work Gallery &amp; Machinery
+                  </Link>
                 </li>
                 <li>
-                  <a href="#capabilities" className="text-slate-450 hover:text-primary-light transition-colors font-sans">
-                    Press Capabilities
-                  </a>
+                  <Link href="/contact" className="text-slate-400 hover:text-white transition-colors font-sans">
+                    Contact Us / Get Quote
+                  </Link>
                 </li>
               </ul>
             </div>

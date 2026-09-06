@@ -1,119 +1,348 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
+import {
+  CheckCircle2,
+  Sparkles,
+  ArrowRight,
+  ShieldCheck,
+  Zap,
+  ShoppingBag,
+  UtensilsCrossed,
+  Pill,
+  Factory
+} from "lucide-react";
 
-const industries = [
+interface IndustryItem {
+  id: string;
+  badge: string;
+  category: string;
+  icon: React.ElementType;
+  titlePrefix: string;
+  titleHighlight: string;
+  desc: string[];
+  deliverables: string[];
+  tags: string[];
+  image: string;
+  imageAlt: string;
+}
+
+const industries: IndustryItem[] = [
   {
-    title: "Pharmaceutical Packaging",
-    desc: "Pharma packaging leaves no room for error. A misaligned fold, an unreadable batch code, or an inconsistent finish isn't just a quality issue; it's a compliance risk.\n\nWe print cartons, vial packaging, and injection boxes with the precision this industry demands, and our Bobst Visionfold line's Accubraille capability means we can handle Braille-compliant folding where it's required. From syrups and creams to injectables and tablets, we understand that \"close enough\" isn't a standard pharma brands can work with.",
-    deliverables: [
-      "Precision carton printing",
-      "Accurate batch/regulatory text reproduction",
-      "Braille-capable folding & gluing",
-      "Vial and injection box packaging",
-      "Consistent, inspection-checked output at scale"
+    id: "pharmaceutical-packaging",
+    badge: "SECTOR 01 // ZERO-DEFECT COMPLIANCE",
+    category: "Pharma & Healthcare",
+    icon: Pill,
+    titlePrefix: "Pharmaceutical",
+    titleHighlight: "Packaging",
+    desc: [
+      "Pharma packaging leaves no room for error. A misaligned fold, an unreadable batch code, or an inconsistent finish isn't just a quality issue; it's a compliance risk.",
+      "We print cartons, vial packaging, and injection boxes with the precision this industry demands, and our Bobst Visionfold line's Accubraille capability means we can handle Braille-compliant folding where it's required. From syrups and creams to injectables and tablets, we understand that \"close enough\" isn't a standard pharma brands can work with."
     ],
-    image: "https://images.unsplash.com/photo-1584308666744-24d5e4a5bf4d?auto=format&fit=crop&q=80&w=1000"
+    deliverables: [
+      "Precision carton printing with micro-dot registration",
+      "Accurate batch/regulatory text & 2D Data Matrix reproduction",
+      "Braille-capable high-speed folding & gluing (Accubraille)",
+      "Vial and injection box packaging with tight dimensional tolerances",
+      "Consistent, multi-stage inspection-checked output at commercial scale"
+    ],
+    tags: ["Accubraille Ready", "2D Data Matrix", "Tight Tolerances", "Vial Outers"],
+    image: "/images/pharma_carton_braille.jpg",
+    imageAlt: "Pharmaceutical folding boxboard cartons with cleanroom medicine packaging"
   },
   {
-    title: "FMCG & Personal Care Packaging",
-    desc: "In FMCG, packaging has about two seconds to earn attention on a shelf and it has to survive the journey from factory to retail without a scratch. We print cartons for soap, perfume, agarbatti, toothpaste, cosmetics, spices, and personal care products with the design-forward finish this category demands, backed by fast turnarounds so you can move at retail speed.",
-    deliverables: [
-      "Eye-catching, design-ready cartons",
-      "Multiple size variants",
-      "Hygienic packing standards",
-      "Quality paper sourcing",
-      "Fast, reliable turnaround"
+    id: "fmcg-packaging",
+    badge: "SECTOR 02 // HIGH-SPEED SHELF IMPACT",
+    category: "FMCG & Personal Care",
+    icon: ShoppingBag,
+    titlePrefix: "FMCG & Personal Care",
+    titleHighlight: "Packaging",
+    desc: [
+      "In FMCG, packaging has about two seconds to earn attention on a shelf and it has to survive the journey from factory to retail without a scratch. We print cartons for soap, perfume, agarbatti, toothpaste, cosmetics, spices, and personal care products with the design-forward finish this category demands, backed by fast turnarounds so you can move at retail speed."
     ],
-    image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=1000"
+    deliverables: [
+      "Eye-catching, design-ready cartons with vivid process color",
+      "Multiple size variants and SKU families printed concurrently",
+      "Hygienic packing standards for personal care & toiletries",
+      "Quality paperboard sourcing (virgin SBS, FBB, and recycled duplex)",
+      "Fast, dependable turnaround for rapid retail restocking"
+    ],
+    tags: ["Drip-Off UV", "Hot Foil Stamping", "Multi-SKU Batches", "High-Rub Resistant"],
+    image: "/images/fmcg_cosmetic_cartons.jpg",
+    imageAlt: "Luxury cosmetics and personal care retail cartons with premium varnish"
   },
   {
-    title: "Food, Beverage & Instant-Mix Packaging",
-    desc: "Whether it's an instant-mix snack carton or a beverage box, food packaging has to look appetizing and stay food-safe. We produce vibrant, accurate color reproduction for food brands who need their packaging to sell the product before it's even opened.",
-    deliverables: [
-      "Vivid, appetite-driving print quality",
-      "Food-safe production standards",
-      "Reliable bulk-order turnaround"
+    id: "food-packaging",
+    badge: "SECTOR 03 // FOOD SAFETY & SHELF VIBRANCY",
+    category: "Food & Beverage",
+    icon: UtensilsCrossed,
+    titlePrefix: "Food, Beverage & Instant-Mix",
+    titleHighlight: "Packaging",
+    desc: [
+      "Whether it's an instant-mix snack carton or a beverage box, food packaging has to look appetizing and stay food-safe. We produce vibrant, accurate color reproduction for food brands who need their packaging to sell the product before it's even opened."
     ],
-    image: "https://images.unsplash.com/photo-1606859191214-25806e9e2463?auto=format&fit=crop&q=80&w=1000"
+    deliverables: [
+      "Vivid, appetite-driving print quality with high-density color fidelity",
+      "Food-safe production standards using low-migration inks & boards",
+      "Reliable bulk-order turnaround synchronized with harvest & seasonal peaks"
+    ],
+    tags: ["Food-Grade Boards", "Low-Migration Inks", "Grease Resistant", "Aromatic Spices"],
+    image: "/images/folding_cartons_specimen.jpg",
+    imageAlt: "Vibrant food packaging cartons and regional instant food mix boxes"
   },
   {
-    title: "Nutraceutical & Supplement Packaging",
-    desc: "Supplement buyers judge trust by presentation. We produce sharp, clean labels and cartons for nutraceutical and supplement brands; the kind of finish that signals quality before a customer reads a single ingredient.",
-    deliverables: [
-      "Premium label finishing",
-      "Accurate, legible dosage/ingredient printing",
-      "Bottle and carton label production"
+    id: "nutra-packaging",
+    badge: "SECTOR 04 // PRESTIGE & INTEGRITY",
+    category: "Nutraceuticals",
+    icon: ShieldCheck,
+    titlePrefix: "Nutraceutical & Supplement",
+    titleHighlight: "Packaging",
+    desc: [
+      "Supplement buyers judge trust by presentation. We produce sharp, clean labels and cartons for nutraceutical and supplement brands; the kind of finish that signals quality before a customer reads a single ingredient."
     ],
-    image: "https://images.unsplash.com/photo-1626808642875-0aa545464198?auto=format&fit=crop&q=80&w=1000"
+    deliverables: [
+      "Premium label finishing with metallic foil accents & matte soft-touch",
+      "Accurate, ultra-legible dosage and ingredient panel typography",
+      "Custom bottle wraps and folding cartons built for shelf distinction"
+    ],
+    tags: ["Metallic Foiling", "Micro-Legibility", "Tamper Evident", "Soft-Touch Matte"],
+    image: "/images/sticker_labels_roll.jpg",
+    imageAlt: "Modern nutraceutical and health supplement cartons and specialized product packaging"
   }
 ];
 
 export default function IndustryListSection() {
-  return (
-    <section className="py-20 lg:py-28 bg-white border-b border-slate-200">
-      <div className="max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8 space-y-24 sm:space-y-32">
-        {industries.map((ind, idx) => {
-          const isEven = idx % 2 === 0;
-          return (
-            <div key={idx} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${isEven ? '' : 'lg:flex-row-reverse'}`}>
-              
-              {/* Image Block */}
-              <motion.div
-                initial={{ opacity: 0, x: isEven ? -30 : 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6 }}
-                className={`relative h-[400px] sm:h-[500px] w-full rounded-sm overflow-hidden shadow-lg group ${!isEven ? 'lg:order-2' : 'lg:order-1'}`}
-              >
-                <img 
-                  src={ind.image} 
-                  alt={ind.title} 
-                  className="absolute inset-0 w-full h-full object-cover filter transition-transform duration-1000 group-hover:scale-105" 
-                />
-                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-500 blend-multiply"></div>
-              </motion.div>
+  const [activeSector, setActiveSector] = useState<string>(industries[0].id);
 
-              {/* Text Block */}
-              <motion.div
-                initial={{ opacity: 0, x: isEven ? 30 : -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className={`${!isEven ? 'lg:order-1' : 'lg:order-2'}`}
+  // Scrollspy via IntersectionObserver
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 240; // Offset for header + sticky nav
+      
+      for (let i = industries.length - 1; i >= 0; i--) {
+        const element = document.getElementById(industries[i].id);
+        if (element) {
+          const top = element.offsetTop;
+          if (scrollPosition >= top) {
+            setActiveSector(industries[i].id);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToSector = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const yOffset = -110;
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
+  return (
+    <section className="py-20 lg:py-28 bg-slate-50 border-b border-slate-200 relative">
+      <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Responsive Two-Column Layout: Sticky Sidebar (30%) + Scrolling Cards (70%) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+
+          {/* ─────────────────────────────────────────────────────────────
+              LEFT COLUMN: STICKY SIDEBAR NAVIGATION (Scrollspy)
+             ───────────────────────────────────────────────────────────── */}
+          <aside className="lg:col-span-4 lg:sticky lg:top-32 self-start space-y-6">
+            
+            {/* Nav Card Container */}
+            <div className="bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-7 shadow-sm">
+              <div className="flex items-center gap-2 text-primary text-xs font-heading font-semibold uppercase tracking-widest mb-3">
+                <Sparkles className="w-3.5 h-3.5" />
+                Industry Directory
+              </div>
+              <h2 className="font-heading font-light text-2xl text-slate-900 mb-1 tracking-tight">
+                Sectors We <span className="font-bold text-primary">Serve</span>
+              </h2>
+              <p className="font-sans text-xs text-slate-500 mb-6">
+                Click any sector to jump directly to technical specs and deliverables.
+              </p>
+
+              {/* Navigation Items */}
+              <nav className="space-y-2">
+                {industries.map((ind, idx) => {
+                  const isActive = activeSector === ind.id;
+                  const Icon = ind.icon;
+                  return (
+                    <button
+                      key={ind.id}
+                      onClick={() => scrollToSector(ind.id)}
+                      className={`w-full text-left p-3.5 rounded-2xl transition-all duration-300 flex items-center justify-between group border ${
+                        isActive
+                          ? "bg-primary/5 border-primary/40 text-primary shadow-xs"
+                          : "bg-slate-50/70 border-slate-200/70 text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+                      }`}
+                    >
+                      <div className="flex items-center gap-3 min-w-0">
+                        <div
+                          className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-colors ${
+                            isActive
+                              ? "bg-primary text-white"
+                              : "bg-white border border-slate-200 text-slate-500 group-hover:text-primary group-hover:border-primary/30"
+                          }`}
+                        >
+                          <Icon className="w-4 h-4" />
+                        </div>
+                        <div className="min-w-0">
+                          <span className="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-400">
+                            0{idx + 1} // SECTOR
+                          </span>
+                          <span
+                            className={`block text-sm font-heading font-medium truncate ${
+                              isActive ? "text-primary font-bold" : "text-slate-800"
+                            }`}
+                          >
+                            {ind.category}
+                          </span>
+                        </div>
+                      </div>
+
+                      <ArrowRight
+                        className={`w-4 h-4 shrink-0 transition-transform ${
+                          isActive
+                            ? "text-primary translate-x-0.5"
+                            : "text-slate-300 group-hover:text-slate-600 group-hover:translate-x-0.5"
+                        }`}
+                      />
+                    </button>
+                  );
+                })}
+              </nav>
+            </div>
+
+            {/* Quick Factory Capability Callout */}
+            <div className="bg-slate-900 rounded-3xl p-6 text-white border border-slate-800 shadow-sm hidden lg:block">
+              <div className="flex items-center gap-2 text-primary-light text-xs font-mono uppercase tracking-wider mb-2">
+                <Factory className="w-4 h-4 text-primary" />
+                In-House Capability
+              </div>
+              <h4 className="font-heading font-bold text-base text-white mb-2">
+                Unified Manufacturing Campus
+              </h4>
+              <p className="font-sans text-xs text-slate-300 leading-relaxed mb-4">
+                Every sector benefits from direct single-roof accountability: prepress laser CTP, multicolor offset printing, Bobst folding, and QA inspection in Ahmedabad.
+              </p>
+              <div className="pt-3 border-t border-slate-800 flex items-center justify-between text-[11px] font-mono text-slate-400">
+                <span>EST. 1921</span>
+                <span className="text-emerald-400 font-medium">● Operational 24/7</span>
+              </div>
+            </div>
+
+          </aside>
+
+          {/* ─────────────────────────────────────────────────────────────
+              RIGHT COLUMN: FULL-WIDTH ARCHITECTURAL SECTOR CARDS
+             ───────────────────────────────────────────────────────────── */}
+          <div className="lg:col-span-8 space-y-12 sm:space-y-16">
+            {industries.map((ind, idx) => (
+              <motion.article
+                key={ind.id}
+                id={ind.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.6 }}
+                className="bg-white rounded-3xl border border-slate-200/90 shadow-sm p-6 sm:p-10 scroll-mt-32 hover:border-slate-300 hover:shadow-md transition-all duration-300 relative overflow-hidden"
               >
-                <h2 className="font-heading font-light text-3xl sm:text-4xl lg:text-5xl text-slate-900 mb-8 leading-tight">
-                  <span className="font-bold relative inline-block">
-                    {ind.title.split(' ')[0]} 
-                    <span className="absolute bottom-1 left-0 w-full h-1 bg-primary/30" />
+                {/* Sector Eyebrow & Monospace Badge */}
+                <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+                  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-[11px] font-mono tracking-wider uppercase font-medium">
+                    {ind.badge}
                   </span>
-                  {' '} {ind.title.split(' ').slice(1).join(' ')}
-                </h2>
-                
-                <div className="prose prose-lg prose-slate font-sans leading-relaxed text-slate-600 mb-8 whitespace-pre-wrap">
-                  {ind.desc}
+                  <div className="flex items-center gap-1.5 text-xs font-heading font-semibold text-primary">
+                    <Zap className="w-3.5 h-3.5" />
+                    <span>0{idx + 1} of 04</span>
+                  </div>
                 </div>
 
-                <div className="bg-slate-50 p-6 sm:p-8 border-l-4 border-primary shadow-sm hover:shadow-md transition-shadow">
-                  <h4 className="font-heading text-sm font-bold uppercase tracking-widest text-slate-900 mb-5">
-                    What We Deliver:
+                {/* Main Heading */}
+                <h3 className="font-heading font-light text-2xl sm:text-3xl lg:text-4xl text-slate-900 mb-6 leading-tight">
+                  {ind.titlePrefix}{" "}
+                  <span className="font-bold text-primary">{ind.titleHighlight}</span>
+                </h3>
+
+                {/* Hero Sector Photography in Rich Full Color */}
+                <div className="relative h-[280px] sm:h-[380px] w-full rounded-2xl overflow-hidden shadow-md my-6 group border border-slate-100">
+                  <img
+                    src={ind.image}
+                    alt={ind.imageAlt}
+                    className="w-full h-full object-cover object-center filter saturate-105 group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity duration-300" />
+                </div>
+
+                {/* Sector Narrative Description */}
+                <div className="space-y-4 text-slate-600 font-sans text-base sm:text-lg leading-relaxed mb-8">
+                  {ind.desc.map((p, pIdx) => (
+                    <p key={pIdx}>{p}</p>
+                  ))}
+                </div>
+
+                {/* What We Deliver Matrix */}
+                <div className="bg-slate-50 p-6 sm:p-8 rounded-2xl border-l-4 border-primary shadow-xs mb-8">
+                  <h4 className="font-heading text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-900 mb-5 flex items-center gap-2">
+                    <span>What We Deliver for {ind.category}:</span>
                   </h4>
-                  <ul className="space-y-4">
+                  <ul className="space-y-3.5">
                     {ind.deliverables.map((item, i) => (
                       <li key={i} className="flex items-start gap-3">
                         <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                        <span className="font-sans text-[15px] text-slate-700 leading-snug">{item}</span>
+                        <span className="font-sans text-sm sm:text-[15px] text-slate-700 leading-snug">
+                          {item}
+                        </span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-              </motion.div>
-            </div>
-          );
-        })}
+                {/* Capabilities Badges Bar */}
+                <div className="pt-6 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
+                  <div className="flex flex-wrap gap-2">
+                    {ind.tags.map((tag, tIdx) => (
+                      <span
+                        key={tIdx}
+                        className="px-3 py-1 rounded-lg bg-slate-100 text-slate-700 text-xs font-mono"
+                      >
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <button
+                    onClick={() => {
+                      const el = document.getElementById("rfq-section") || document.getElementById("contact-section");
+                      if (el) {
+                        el.scrollIntoView({ behavior: "smooth" });
+                      } else {
+                        window.location.href = "#rfq-section";
+                      }
+                    }}
+                    className="inline-flex items-center gap-1.5 text-xs font-heading font-semibold text-primary hover:text-primary-dark transition-colors"
+                  >
+                    <span>Request Spec Consultation</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              </motion.article>
+            ))}
+          </div>
+
+        </div>
+
       </div>
     </section>
   );

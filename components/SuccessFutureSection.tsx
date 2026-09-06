@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { ChevronRight, ArrowDownRight } from "lucide-react";
 
@@ -17,22 +18,26 @@ const cards = [
   {
     title: "FMCG Cartons",
     desc: "From agarbatti boxes to soap and perfume packaging, our fast, precise production keeps FMCG brands moving without delivery glitches.",
-    img: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=600"
+    img: "/images/fmcg_cosmetic_cartons.jpg",
+    href: "/industry"
   },
   {
     title: "Sticker & Label Printing",
     desc: "Small in size, big in impact, bottle labels, product labels, and promotional stickers are finished to the same standard as our largest carton orders.",
-    img: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&q=80&w=600"
+    img: "/images/sticker_labels_roll.jpg",
+    href: "/services"
   },
   {
     title: "Promotional Materials",
     desc: "Catalogues, standees, brochures, posters, and danglers built to fulfill out-of-the-box creative briefs for consumer brands.",
-    img: "https://images.unsplash.com/photo-1541462608143-67571c6738dd?auto=format&fit=crop&q=80&w=600"
+    img: "/images/commercial_promotional_print.jpg",
+    href: "/services"
   },
   {
     title: "Pharmaceutical Packaging",
     desc: "Compliance-driven printing for vials, injectables, liquids, and sterile products, where precision isn't optional.",
-    img: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=600"
+    img: "/images/pharma_carton_braille.jpg",
+    href: "/industry"
   }
 ];
 
@@ -52,13 +57,9 @@ export default function SuccessFutureSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
-            className="font-heading text-[2.5rem] sm:text-[3.5rem] lg:text-[4.5rem] leading-[1.1] text-slate-900"
+            className="font-heading font-light text-3xl sm:text-4xl lg:text-5xl leading-tight text-slate-900"
           >
-            What We{" "}
-            <span className="relative inline-block">
-              Print
-              <span className="absolute bottom-2 lg:bottom-4 left-0 w-full h-[4px] bg-primary"></span>
-            </span>
+            What We <span className="font-bold text-primary">Print</span>
           </motion.h2>
 
           <motion.div
@@ -72,12 +73,12 @@ export default function SuccessFutureSection() {
             <p className="font-sans text-[16px] sm:text-[18px] text-slate-600 leading-relaxed font-medium">
               We don't just print; we solve packaging problems for industries that can't afford to get it wrong.
             </p>
-            <a
-              href="#services"
+            <Link
+              href="/services"
               className="font-sans text-[14px] font-bold text-slate-900 hover:text-primary transition-colors inline-flex items-center gap-1 border-b-[3px] border-slate-900 hover:border-primary pb-1 uppercase tracking-wide mt-2"
             >
               View All Services <ChevronRight className="w-4 h-4 ml-1" />
-            </a>
+            </Link>
           </motion.div>
         </div>
 
@@ -93,29 +94,31 @@ export default function SuccessFutureSection() {
               viewport={{ once: true, margin: "-60px" }}
               className="relative aspect-4/5 bg-white group overflow-hidden shadow-lg cursor-pointer"
             >
-              {/* Background Image */}
-              <img
-                src={item.img}
-                alt={item.title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
+              <Link href={item.href} className="block w-full h-full relative" aria-label={`View ${item.title}`}>
+                {/* Background Image */}
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
 
-              {/* Animated Overlay Container */}
-              <div className="absolute left-0 bottom-0 w-full bg-primary text-white transition-all duration-300 ease-in-out px-6 flex flex-col justify-start overflow-hidden h-[60px] group-hover:h-[48%]">
+                {/* Animated Overlay Container */}
+                <div className="absolute left-0 bottom-0 w-full bg-primary text-white transition-all duration-300 ease-in-out px-6 flex flex-col justify-start overflow-hidden h-[60px] group-hover:h-[48%]">
 
-                {/* Default visible header */}
-                <div className="flex justify-between items-center w-full min-h-[60px] shrink-0">
-                  <h3 className="font-heading text-lg font-medium tracking-wide m-0">{item.title}</h3>
-                  <ArrowDownRight className="w-5 h-5 shrink-0 transition-transform duration-300 group-hover:rotate-[-90deg]" />
+                  {/* Default visible header */}
+                  <div className="flex justify-between items-center w-full min-h-[60px] shrink-0">
+                    <h3 className="font-heading text-lg font-medium tracking-wide m-0">{item.title}</h3>
+                    <ArrowDownRight className="w-5 h-5 shrink-0 transition-transform duration-300 group-hover:rotate-[-90deg]" />
+                  </div>
+
+                  {/* Hidden description that reveals on hover */}
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100 flex-grow pt-2 pb-6">
+                    <p className="font-sans text-[15.5px] leading-relaxed text-white/95">
+                      {item.desc}
+                    </p>
+                  </div>
                 </div>
-
-                {/* Hidden description that reveals on hover */}
-                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100 flex-grow pt-2 pb-6">
-                  <p className="font-sans text-[15.5px] leading-relaxed text-white/95">
-                    {item.desc}
-                  </p>
-                </div>
-              </div>
+              </Link>
             </motion.div>
           ))}
         </div>

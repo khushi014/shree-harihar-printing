@@ -46,7 +46,7 @@ export default function AboutInfrastructureSection() {
             className="flex flex-col h-full justify-center"
           >
             <h2 className="font-heading font-light text-3xl sm:text-4xl lg:text-5xl text-slate-900 leading-tight mb-6">
-              Built for <span className="font-bold text-primary">Precision</span> <br className="hidden sm:block" /> Our Infrastructure
+              State-of-the-Art <span className="font-bold text-primary">Infrastructure</span>
             </h2>
             <p className="font-sans text-base sm:text-lg text-slate-600 leading-relaxed mb-8">
               We invested in owning the entire production process because quality is hardest to control when it's spread across multiple vendors. Our in-house capability includes everything needed from setup to final compliance-ready finishing.
@@ -54,7 +54,7 @@ export default function AboutInfrastructureSection() {
             
             <div className="relative h-64 sm:h-80 w-full rounded-sm overflow-hidden mb-8 shadow-md">
               <img 
-                src="https://images.unsplash.com/photo-1616423640778-28d1b53229bd?auto=format&fit=crop&q=80&w=1200" 
+                src="/images/modern_offset_press.jpg" 
                 alt="Modern Heidelberg Printing Press offset" 
                 className="absolute inset-0 w-full h-full object-cover filter hover:scale-105 transition-transform duration-1000" 
               />

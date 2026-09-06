@@ -16,33 +16,33 @@ const fadeUp = {
 const strongValues = [
   {
     id: "01",
-    title: "Five generations, one standard",
-    desc: "Founded in 1921, still family-led, still quality-obsessed",
-    img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800"
+    title: "Zero-Defect Guarantee",
+    desc: "Automated optical inspection means misprints and color deviations never leave our factory floor.",
+    img: "/images/hero_quality_scan.jpg"
   },
   {
     id: "02",
-    title: "Full in-house production",
-    desc: "prepress to finishing, under one roof, under our control",
-    img: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=800"
+    title: "Single-Vendor Accountability",
+    desc: "Because everything happens under our roof, you never deal with subcontractor delays or finger-pointing.",
+    img: "/images/modern_offset_press.jpg"
   },
   {
     id: "03",
-    title: "On-time delivery, without exception",
-    desc: "from a single sticker run to a full carton order",
-    img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800"
+    title: "Retail-Speed Agility",
+    desc: "Fast turnarounds built to keep pace with dynamic FMCG supply chains and sudden demand spikes.",
+    img: "/images/folding_cartons_specimen.jpg"
   },
   {
     id: "04",
-    title: "Multi-industry expertise",
-    desc: "pharma-grade precision, FMCG-grade creativity",
-    img: "https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&q=80&w=800"
+    title: "Seamless Scalability",
+    desc: "From short-run promotional stickers to multi-million carton enterprise orders, we scale with your growth.",
+    img: "/images/hero_precision_pack.jpg"
   },
   {
     id: "05",
-    title: "Compliance-ready capability",
-    desc: "including Braille-embossed, regulation-sensitive cartons",
-    img: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800"
+    title: "Uncompromising Compliance",
+    desc: "Strict adherence to GMP standards ensures your regulated packaging sails through QA approvals.",
+    img: "/images/pharma_carton_braille.jpg"
   }
 ];
 
@@ -64,12 +64,9 @@ export default function StrongCoreSection() {
             custom={0}
             initial="hidden"
             animate={headingInView ? "visible" : "hidden"}
-            className="font-heading text-[2.5rem] sm:text-[3.5rem] lg:text-[4.5rem] leading-[1.1] text-slate-900 mb-4 w-full block"
+            className="font-heading font-light text-3xl sm:text-4xl lg:text-5xl leading-tight text-slate-900 mb-4 w-full block"
           >
-            What Sets <span className="relative inline-block">
-              Us Apart
-              <span className="absolute bottom-2 left-0 w-full h-[4px] bg-primary" />
-            </span>
+            What Sets <span className="font-bold text-primary">Us Apart</span>
           </motion.h2>
         </div>
 

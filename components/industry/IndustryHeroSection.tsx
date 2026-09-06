@@ -7,15 +7,15 @@ export default function IndustryHeroSection() {
   return (
     <section className="bg-slate-950 text-white py-24 md:py-32 relative overflow-hidden flex items-center min-h-[50vh]">
       
-      {/* Background Image/Video placeholder */}
+      {/* Background Image: Diverse Array of Finished Packaging Cartons */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=1600" 
-          alt="Pallets of packaging boxes in a warehouse" 
-          className="absolute inset-0 w-full h-full object-cover opacity-20 filter grayscale" 
+          src="/images/hero_brand_print.jpg" 
+          alt="Diverse assortment of pharmaceutical, cosmetic, and food packaging cartons on display" 
+          className="absolute inset-0 w-full h-full object-cover opacity-35 filter saturate-105" 
         />
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-slate-900/40"></div>
+        {/* Cinematic Vignette Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-slate-900/50"></div>
       </div>
 
       <div className="max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center w-full">
@@ -26,7 +26,7 @@ export default function IndustryHeroSection() {
           className="font-heading font-light text-4xl sm:text-5xl lg:text-7xl leading-tight mb-8"
         >
           Packaging Built Around What <br className="hidden lg:block" />
-          <span className="font-bold relative inline-block text-primary mt-2">
+          <span className="font-bold text-primary mt-2">
             Your Industry Actually Needs.
           </span>
         </motion.h1>

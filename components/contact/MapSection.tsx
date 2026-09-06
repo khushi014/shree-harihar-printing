@@ -11,10 +11,19 @@ export default function MapSection() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-heading font-light text-3xl sm:text-4xl text-slate-900"
+          className="font-heading font-light text-3xl sm:text-4xl text-slate-900 mb-4"
         >
-          Find <span className="font-bold relative inline-block text-primary">Us</span>
+          Find <span className="font-bold text-primary">Us</span>
         </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+          className="font-sans text-base sm:text-lg text-slate-600 max-w-xl mx-auto leading-relaxed"
+        >
+          Visit our manufacturing facility in Ahmedabad for scheduled plant visits and consultations.
+        </motion.p>
       </div>
 
       <motion.div

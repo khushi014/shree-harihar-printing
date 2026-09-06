@@ -26,7 +26,7 @@ export default function AboutBlueprintSection() {
   return (
     <section className="py-20 lg:py-28 bg-zinc-50 border-b border-slate-200">
       <div className="max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
@@ -34,7 +34,7 @@ export default function AboutBlueprintSection() {
             viewport={{ once: true, margin: "-80px" }}
             className="font-heading font-light text-3xl sm:text-4xl lg:text-5xl text-slate-900 mb-6"
           >
-            The Blueprint for <span className="font-bold relative inline-block text-primary">Our Success</span>
+            The Blueprint for <span className="font-bold text-primary">Our Success</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -69,16 +69,6 @@ export default function AboutBlueprintSection() {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-4xl mx-auto text-center font-sans text-base sm:text-lg text-slate-700 leading-relaxed font-medium bg-white p-8 border border-slate-200 shadow-sm"
-        >
-          We're proud to be partners for growth for our clients, thanks to our pledge for high standards of quality and perfection made possible by an astute, committed, and passionate workforce operating in a peaceful, safe, and harmonious work culture.
-        </motion.div>
-        
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function HeroSection() {
@@ -8,31 +9,31 @@ export default function HeroSection() {
 
   const heroSlides = [
     {
-      image: "https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&q=80&w=1920",
+      image: "/images/hero_precision_pack.jpg",
       align: "left",
       preTitle: "High-Volume B2B",
       title: "Precision Packaging",
       desc: "Mono cartons and structural packaging built for automated pharmaceutical and FMCG cartoning lines.",
       cta: "Explore Services!",
-      action: "#capabilities"
+      action: "/services"
     },
     {
-      image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1920",
+      image: "/images/hero_brand_print.jpg",
       align: "right",
       preTitle: "Breathing Life",
       title: "Into Your Print",
       desc: "Consistent color, faster turnarounds, and packaging that elevates your brand on every shelf.",
       cta: "Contact Us!",
-      action: "#contact"
+      action: "/contact"
     },
     {
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1920",
+      image: "/images/hero_quality_scan.jpg",
       align: "left",
       preTitle: "Uncompromised",
       title: "Quality Control",
       desc: "Carton inspection and finishing processes built for zero-defect production in regulated industries.",
       cta: "View Infrastructure",
-      action: "#infrastructure"
+      action: "/gallery"
     }
   ];
 
@@ -103,12 +104,12 @@ export default function HeroSection() {
                 </div>
 
                 <div className="mt-10">
-                  <a
+                  <Link
                     href={slide.action}
                     className="inline-block bg-primary hover:bg-primary-dark font-heading text-sm font-bold text-white px-8 py-4 tracking-wider rounded-full uppercase transition-all duration-200 shadow-xl shadow-primary/20"
                   >
                     {slide.cta}
-                  </a>
+                  </Link>
                 </div>
               </div>
               
