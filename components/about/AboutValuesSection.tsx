@@ -81,7 +81,7 @@ export default function AboutValuesSection() {
             {/* Top Bar: Monospace Tag & Icon */}
             <div className="relative z-10 flex items-center justify-between">
               <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-white text-[11px] font-mono tracking-widest uppercase">
-                PILLAR 01 // TECHNOLOGICAL EDGE
+                PILLAR 01 - TECHNOLOGICAL EDGE
               </span>
               <div className="w-12 h-12 rounded-2xl bg-primary/20 backdrop-blur-md border border-primary/40 flex items-center justify-center text-primary-light group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-300">
                 <Lightbulb className="w-6 h-6" />
@@ -134,7 +134,7 @@ export default function AboutValuesSection() {
               <div>
                 <div className="flex items-center justify-between mb-6">
                   <span className="text-[11px] font-mono tracking-widest uppercase text-slate-400 font-semibold">
-                    PILLAR 02 // ENDURING PARTNERSHIPS
+                    PILLAR 02 - ENDURING PARTNERSHIPS
                   </span>
                   <div className="w-11 h-11 rounded-2xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-700 group-hover:bg-primary/10 group-hover:border-primary/30 group-hover:text-primary transition-all duration-300">
                     <Target className="w-5 h-5" />
@@ -175,7 +175,7 @@ export default function AboutValuesSection() {
               <div>
                 <div className="flex items-center justify-between mb-6">
                   <span className="text-[11px] font-mono tracking-widest uppercase text-slate-400 font-semibold">
-                    PILLAR 03 // CRAFT &amp; CULTURE
+                    PILLAR 03 - CRAFT &amp; CULTURE
                   </span>
                   <div className="w-11 h-11 rounded-2xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-700 group-hover:bg-primary/10 group-hover:border-primary/30 group-hover:text-primary transition-all duration-300">
                     <HeartHandshake className="w-5 h-5" />

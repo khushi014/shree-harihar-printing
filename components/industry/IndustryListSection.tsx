@@ -7,11 +7,9 @@ import {
   Sparkles,
   ArrowRight,
   ShieldCheck,
-  Zap,
   ShoppingBag,
   UtensilsCrossed,
   Pill,
-  Factory
 } from "lucide-react";
 
 interface IndustryItem {
@@ -31,7 +29,7 @@ interface IndustryItem {
 const industries: IndustryItem[] = [
   {
     id: "pharmaceutical-packaging",
-    badge: "SECTOR 01 // ZERO-DEFECT COMPLIANCE",
+    badge: "SECTOR 01 - ZERO-DEFECT COMPLIANCE",
     category: "Pharma & Healthcare",
     icon: Pill,
     titlePrefix: "Pharmaceutical",
@@ -53,7 +51,7 @@ const industries: IndustryItem[] = [
   },
   {
     id: "fmcg-packaging",
-    badge: "SECTOR 02 // HIGH-SPEED SHELF IMPACT",
+    badge: "SECTOR 02 - HIGH-SPEED SHELF IMPACT",
     category: "FMCG & Personal Care",
     icon: ShoppingBag,
     titlePrefix: "FMCG & Personal Care",
@@ -74,7 +72,7 @@ const industries: IndustryItem[] = [
   },
   {
     id: "food-packaging",
-    badge: "SECTOR 03 // FOOD SAFETY & SHELF VIBRANCY",
+    badge: "SECTOR 03 - FOOD SAFETY & SHELF VIBRANCY",
     category: "Food & Beverage",
     icon: UtensilsCrossed,
     titlePrefix: "Food, Beverage & Instant-Mix",
@@ -93,7 +91,7 @@ const industries: IndustryItem[] = [
   },
   {
     id: "nutra-packaging",
-    badge: "SECTOR 04 // PRESTIGE & INTEGRITY",
+    badge: "SECTOR 04 - PRESTIGE & INTEGRITY",
     category: "Nutraceuticals",
     icon: ShieldCheck,
     titlePrefix: "Nutraceutical & Supplement",
@@ -199,7 +197,7 @@ export default function IndustryListSection() {
                         </div>
                         <div className="min-w-0">
                           <span className="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-400">
-                            0{idx + 1} // SECTOR
+                            0{idx + 1} SECTOR
                           </span>
                           <span
                             className={`block text-sm font-heading font-medium truncate ${
@@ -224,23 +222,6 @@ export default function IndustryListSection() {
               </nav>
             </div>
 
-            {/* Quick Factory Capability Callout */}
-            <div className="bg-slate-900 rounded-3xl p-6 text-white border border-slate-800 shadow-sm hidden lg:block">
-              <div className="flex items-center gap-2 text-primary-light text-xs font-mono uppercase tracking-wider mb-2">
-                <Factory className="w-4 h-4 text-primary" />
-                In-House Capability
-              </div>
-              <h4 className="font-heading font-bold text-base text-white mb-2">
-                Unified Manufacturing Campus
-              </h4>
-              <p className="font-sans text-xs text-slate-300 leading-relaxed mb-4">
-                Every sector benefits from direct single-roof accountability: prepress laser CTP, multicolor offset printing, Bobst folding, and QA inspection in Ahmedabad.
-              </p>
-              <div className="pt-3 border-t border-slate-800 flex items-center justify-between text-[11px] font-mono text-slate-400">
-                <span>EST. 1921</span>
-                <span className="text-emerald-400 font-medium">● Operational 24/7</span>
-              </div>
-            </div>
 
           </aside>
 
@@ -258,16 +239,7 @@ export default function IndustryListSection() {
                 transition={{ duration: 0.6 }}
                 className="bg-white rounded-3xl border border-slate-200/90 shadow-sm p-6 sm:p-10 scroll-mt-32 hover:border-slate-300 hover:shadow-md transition-all duration-300 relative overflow-hidden"
               >
-                {/* Sector Eyebrow & Monospace Badge */}
-                <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-                  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-[11px] font-mono tracking-wider uppercase font-medium">
-                    {ind.badge}
-                  </span>
-                  <div className="flex items-center gap-1.5 text-xs font-heading font-semibold text-primary">
-                    <Zap className="w-3.5 h-3.5" />
-                    <span>0{idx + 1} of 04</span>
-                  </div>
-                </div>
+
 
                 {/* Main Heading */}
                 <h3 className="font-heading font-light text-2xl sm:text-3xl lg:text-4xl text-slate-900 mb-6 leading-tight">
@@ -309,34 +281,6 @@ export default function IndustryListSection() {
                   </ul>
                 </div>
 
-                {/* Capabilities Badges Bar */}
-                <div className="pt-6 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
-                  <div className="flex flex-wrap gap-2">
-                    {ind.tags.map((tag, tIdx) => (
-                      <span
-                        key={tIdx}
-                        className="px-3 py-1 rounded-lg bg-slate-100 text-slate-700 text-xs font-mono"
-                      >
-                        #{tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  <button
-                    onClick={() => {
-                      const el = document.getElementById("rfq-section") || document.getElementById("contact-section");
-                      if (el) {
-                        el.scrollIntoView({ behavior: "smooth" });
-                      } else {
-                        window.location.href = "#rfq-section";
-                      }
-                    }}
-                    className="inline-flex items-center gap-1.5 text-xs font-heading font-semibold text-primary hover:text-primary-dark transition-colors"
-                  >
-                    <span>Request Spec Consultation</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
-                </div>
               </motion.article>
             ))}
           </div>

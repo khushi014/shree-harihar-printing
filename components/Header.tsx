@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -57,14 +57,13 @@ export default function Header({ onOpenQuote }: { onOpenQuote?: () => void }) {
   return (
     <>
       <header
-        className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-          isScrolled
-            ? "py-2.5 bg-white/98 backdrop-blur-2xl border-b border-slate-200/90 shadow-md shadow-slate-900/5"
-            : "py-3 sm:py-3.5 bg-white/95 backdrop-blur-xl border-b border-slate-200/70 shadow-xs"
-        }`}
+        className={`sticky top-0 z-50 w-full transition-all duration-300 ${isScrolled
+          ? "py-2.5 bg-white/98 backdrop-blur-2xl border-b border-slate-200/90 shadow-md shadow-slate-900/5"
+          : "py-3 sm:py-3.5 bg-white/95 backdrop-blur-xl border-b border-slate-200/70 shadow-xs"
+          }`}
       >
         <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          
+
           {/* ── LOGO BRAND ── */}
           <Link
             href="/"
@@ -97,11 +96,10 @@ export default function Header({ onOpenQuote }: { onOpenQuote?: () => void }) {
                   key={link.name}
                   href={link.href}
                   onMouseEnter={() => setHoveredPath(link.href)}
-                  className={`relative font-heading text-xs font-bold px-3.5 py-2 rounded-full transition-colors duration-200 uppercase tracking-widest ${
-                    isActive
-                      ? "text-white"
-                      : "text-slate-700 hover:text-slate-950"
-                  }`}
+                  className={`relative font-heading text-sm font-bold px-3.5 py-2 rounded-full transition-colors duration-200 uppercase tracking-widest ${isActive
+                    ? "text-white"
+                    : "text-slate-700 hover:text-slate-950"
+                    }`}
                 >
                   {/* Sliding active indicator with Framer Motion */}
                   {isActive && (
@@ -216,13 +214,13 @@ export default function Header({ onOpenQuote }: { onOpenQuote?: () => void }) {
                 {/* Drawer Header */}
                 <div className="flex items-center justify-between pb-5 border-b border-slate-200">
                   <div className="flex items-center gap-2">
-                    <Image
+                    {/* <Image
                       src="/squareLogo.png"
                       alt="Shree Harihar Emblem"
                       width={28}
                       height={28}
                       className="h-7 w-auto object-contain"
-                    />
+                    /> */}
                     <Image
                       src="/logo.png"
                       alt="Shree Harihar Logo"
@@ -257,11 +255,10 @@ export default function Header({ onOpenQuote }: { onOpenQuote?: () => void }) {
                         <Link
                           href={link.href}
                           onClick={() => setMobileMenuOpen(false)}
-                          className={`flex items-center justify-between font-heading text-sm font-semibold px-4 py-3 rounded-xl transition-all uppercase tracking-wider ${
-                            isActive
-                              ? "bg-primary text-white shadow-md shadow-primary/20"
-                              : "text-slate-700 hover:text-slate-950 hover:bg-slate-100"
-                          }`}
+                          className={`flex items-center justify-between font-heading text-sm font-semibold px-4 py-3 rounded-xl transition-all uppercase tracking-wider ${isActive
+                            ? "bg-primary text-white shadow-md shadow-primary/20"
+                            : "text-slate-700 hover:text-slate-950 hover:bg-slate-100"
+                            }`}
                         >
                           <span>{link.name}</span>
                           <ArrowUpRight className={`w-4 h-4 ${isActive ? "opacity-100" : "opacity-40"}`} />

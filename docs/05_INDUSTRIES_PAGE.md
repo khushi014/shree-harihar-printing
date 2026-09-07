@@ -87,7 +87,7 @@ To eliminate "alternating row fatigue" (since the Services page already uses alt
 
 #### Sector 1: Pharmaceutical Packaging (`#pharmaceutical-packaging`)
 - **Card Container:** `bg-white rounded-3xl border border-slate-200/90 shadow-sm p-6 sm:p-10 scroll-mt-32 hover:border-slate-300 hover:shadow-md transition-all`
-- **Monospace Tag:** `SECTOR 01 // ZERO-DEFECT COMPLIANCE`
+- **Monospace Tag:** `SECTOR 01 - ZERO-DEFECT COMPLIANCE`
 - **Counter:** `01 of 04`
 - **Heading:** `Pharmaceutical ` `<span className="font-bold text-primary">Packaging</span>`
 - **Full-Color Photography:**
@@ -111,7 +111,7 @@ To eliminate "alternating row fatigue" (since the Services page already uses alt
 
 #### Sector 2: FMCG & Personal Care Packaging (`#fmcg-packaging`)
 - **Card Container:** `bg-white rounded-3xl border border-slate-200/90 shadow-sm p-6 sm:p-10 scroll-mt-32`
-- **Monospace Tag:** `SECTOR 02 // HIGH-SPEED SHELF IMPACT`
+- **Monospace Tag:** `SECTOR 02 - HIGH-SPEED SHELF IMPACT`
 - **Counter:** `02 of 04`
 - **Heading:** `FMCG & Personal Care ` `<span className="font-bold text-primary">Packaging</span>`
 - **Full-Color Photography:**
@@ -133,7 +133,7 @@ To eliminate "alternating row fatigue" (since the Services page already uses alt
 
 #### Sector 3: Food, Beverage & Instant-Mix Packaging (`#food-packaging`)
 - **Card Container:** `bg-white rounded-3xl border border-slate-200/90 shadow-sm p-6 sm:p-10 scroll-mt-32`
-- **Monospace Tag:** `SECTOR 03 // FOOD SAFETY & SHELF VIBRANCY`
+- **Monospace Tag:** `SECTOR 03 - FOOD SAFETY & SHELF VIBRANCY`
 - **Counter:** `03 of 04`
 - **Heading:** `Food, Beverage & Instant-Mix ` `<span className="font-bold text-primary">Packaging</span>`
 - **Full-Color Photography:**
@@ -153,7 +153,7 @@ To eliminate "alternating row fatigue" (since the Services page already uses alt
 
 #### Sector 4: Nutraceutical & Supplement Packaging (`#nutra-packaging`)
 - **Card Container:** `bg-white rounded-3xl border border-slate-200/90 shadow-sm p-6 sm:p-10 scroll-mt-32`
-- **Monospace Tag:** `SECTOR 04 // PRESTIGE & INTEGRITY`
+- **Monospace Tag:** `SECTOR 04 - PRESTIGE & INTEGRITY`
 - **Counter:** `04 of 04`
 - **Heading:** `Nutraceutical & Supplement ` `<span className="font-bold text-primary">Packaging</span>`
 - **Full-Color Photography:**

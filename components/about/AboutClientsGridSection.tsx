@@ -25,7 +25,7 @@ export default function AboutClientsGridSection() {
           </h2>
 
           <p className="font-sans text-[16px] sm:text-[18px] text-slate-600 leading-relaxed font-medium max-w-2xl">
-            Over a century of enduring partnerships with India&apos;s most demanding enterprises. From regulatory audits to high-speed automated packaging lines, here are some of the brands that trust Shree Harihar.
+            Over a century of enduring partnerships with India&apos;s most demanding enterprises. From regulatory audits to high-speed automated packaging lines, here are some of the brands that trust us.
           </p>
         </div>
 

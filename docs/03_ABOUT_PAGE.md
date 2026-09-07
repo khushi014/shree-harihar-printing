@@ -328,7 +328,7 @@ Communicate the corporate vision, mission, and foundational principles using an 
   1. **Left Hero Bento Card — Innovation (`bg-slate-950` / Tall & Cinematic):**
      - **Structure:** Spans the full height of the left column (`min-h-[480px] lg:min-h-[560px] flex flex-col justify-between p-8 sm:p-10 lg:p-12 rounded-3xl overflow-hidden shadow-2xl border border-slate-800 text-white`).
      - **Visual Anchor:** Full natural-color background photography (`https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&q=80&w=1200` — High-speed printing technology and prepress) with cinematic dark vignette overlay (`bg-gradient-to-t from-slate-950 via-slate-950/75 to-slate-950/30`).
-     - **Top Bar:** Monospace badge `PILLAR 01 // TECHNOLOGICAL EDGE` + `<Lightbulb />` icon in glassmorphic container.
+     - **Top Bar:** Monospace badge `PILLAR 01 - TECHNOLOGICAL EDGE` + `<Lightbulb />` icon in glassmorphic container.
      - **Eyebrow:** `A Strong Penchant For`
      - **Headline:** `Innovation` + hover arrow `<ArrowUpRight />`.
      - **Punchy Copy:** *"Adopting next-generation tech and automated processes while fiercely protecting the discipline of our craft."*
@@ -337,14 +337,14 @@ Communicate the corporate vision, mission, and foundational principles using an 
   2. **Right Column — Two Stacked Clean Architectural Cards (`flex flex-col gap-6 lg:gap-8 justify-between`):**
      - **Top Card — Generational Satisfaction:**
        - **Container:** `bg-white border border-slate-200/90 p-8 sm:p-10 rounded-3xl shadow-sm hover:shadow-xl hover:border-primary/40 transition-all flex flex-col justify-between flex-1`.
-       - **Top Bar:** Monospace badge `PILLAR 02 // ENDURING PARTNERSHIPS` + `<Target />` icon container.
+       - **Top Bar:** Monospace badge `PILLAR 02 - ENDURING PARTNERSHIPS` + `<Target />` icon container.
        - **Eyebrow:** `Achieving Highest`
        - **Headline:** `Generational Satisfaction`
        - **Punchy Copy:** *"Measuring our success not by the size of the order, but by whether the client comes back for the next decade."*
        - **Footer Bar:** `<ShieldCheck />` `Single-Vendor Accountability` + `99.8% Retention` badge.
      - **Bottom Card — Human-Centric Culture:**
        - **Container:** `bg-white border border-slate-200/90 p-8 sm:p-10 rounded-3xl shadow-sm hover:shadow-xl hover:border-primary/40 transition-all flex flex-col justify-between flex-1`.
-       - **Top Bar:** Monospace badge `PILLAR 03 // CRAFT & CULTURE` + `<HeartHandshake />` icon container.
+       - **Top Bar:** Monospace badge `PILLAR 03 - CRAFT & CULTURE` + `<HeartHandshake />` icon container.
        - **Eyebrow:** `Creating A Positive`
        - **Headline:** `Human-Centric Culture`
        - **Punchy Copy:** *"Great packaging doesn't start on a printing press; it starts with artisans and engineers who feel valued every time they step onto the floor."*

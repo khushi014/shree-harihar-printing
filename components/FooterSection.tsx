@@ -3,7 +3,8 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Users, Heart, Shield, TrendingUp, MapPin, Phone, Mail, ExternalLink } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
+import { Facebook, Instagram, Youtube, Linkedin, Whatsapp } from "./Icons";
 
 export default function FooterSection({ setQuoteModalOpen }: { setQuoteModalOpen?: (val: boolean) => void }) {
   return (
@@ -34,10 +35,18 @@ export default function FooterSection({ setQuoteModalOpen }: { setQuoteModalOpen
               <p className="font-sans text-xs text-slate-400 leading-relaxed mb-6">
                 Evolved over 5 generations into a complete, high-volume folding carton Print-Pack company serving pharmaceuticals and FMCG industries.
               </p>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 mb-5">
                 <span className="font-heading text-[10px] font-bold text-slate-500 uppercase tracking-wider">
                   Est. 1921 | Ahmedabad
                 </span>
+              </div>
+              {/* Social Icons */}
+              <div className="flex items-center gap-2.5">
+                <a href="#" className="p-2 rounded-full bg-slate-800 text-slate-400 hover:text-white hover:bg-[#1877F2] transition-all duration-200" title="Facebook"><Facebook className="h-3.5 w-3.5" /></a>
+                <a href="#" className="p-2 rounded-full bg-slate-800 text-slate-400 hover:text-white hover:bg-[#E1306C] transition-all duration-200" title="Instagram"><Instagram className="h-3.5 w-3.5" /></a>
+                <a href="#" className="p-2 rounded-full bg-slate-800 text-slate-400 hover:text-white hover:bg-[#FF0000] transition-all duration-200" title="YouTube"><Youtube className="h-3.5 w-3.5" /></a>
+                <a href="#" className="p-2 rounded-full bg-slate-800 text-slate-400 hover:text-white hover:bg-[#0077b5] transition-all duration-200" title="LinkedIn"><Linkedin className="h-3.5 w-3.5" /></a>
+                <a href="https://wa.me/919825000000" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-slate-800 text-slate-400 hover:text-white hover:bg-emerald-600 transition-all duration-200" title="WhatsApp"><Whatsapp className="h-3.5 w-3.5" /></a>
               </div>
             </div>
 
