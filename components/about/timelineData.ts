@@ -60,7 +60,7 @@ export const TIMELINE_DECADES: TimelineDecade[] = [
   },
   {
     id: "1931-1940",
-    image: "/images/vintage_letterpress_1921.jpg",
+    image: "/images/img3.png",
     imageCaption: "Mechanized stop-cylinder letterpress & scoring tables (1934)",
     decadeRange: "Year 1931–1940",
     periodShort: "1931–1940",
@@ -134,7 +134,7 @@ export const TIMELINE_DECADES: TimelineDecade[] = [
   },
   {
     id: "1951-1960",
-    image: "/images/legacy_craftsmanship.jpg",
+    image: "/images/img2.png",
     imageCaption: "Hot-metal line casting & early folding carton scoring (1958)",
     decadeRange: "Year 1951–1960",
     periodShort: "1951–1960",
@@ -282,7 +282,7 @@ export const TIMELINE_DECADES: TimelineDecade[] = [
   },
   {
     id: "1991-2000",
-    image: "/images/fmcg_cosmetic_cartons.jpg",
+    image: "/images/img8.png",
     imageCaption: "Digital electronic prepress & Friends large-format punching (1998)",
     decadeRange: "Year 1991–2000",
     periodShort: "1991–2000",
@@ -320,7 +320,7 @@ export const TIMELINE_DECADES: TimelineDecade[] = [
   },
   {
     id: "2001-2010",
-    image: "/images/prepress_tech_console.jpg",
+    image: "/images/img1.png",
     imageCaption: "Protek laser Computer-to-Plate (CTP) & Boxtech automated folder-gluer (2008)",
     decadeRange: "Year 2001–2010",
     periodShort: "2001–2010",
@@ -357,7 +357,7 @@ export const TIMELINE_DECADES: TimelineDecade[] = [
   },
   {
     id: "2011-2020",
-    image: "/images/pharma_carton_braille.jpg",
+    image: "/images/img6.png",
     imageCaption: "Swiss Bobst Visionfold with Accubraille & Heidelberg 6-colour press (2018)",
     decadeRange: "Year 2011–2020",
     periodShort: "2011–2020",
@@ -397,7 +397,7 @@ export const TIMELINE_DECADES: TimelineDecade[] = [
   },
   {
     id: "2021-Today",
-    image: "/images/hero_quality_scan.jpg",
+    image: "/images/img9.png",
     imageCaption: "AutoPrint 100% optical vision carton inspection & centenary milestone (2021–Today)",
     decadeRange: "Year 2021–Today",
     periodShort: "2021–Today",

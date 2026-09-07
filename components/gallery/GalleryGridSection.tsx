@@ -27,7 +27,7 @@ const galleryItems: GalleryItem[] = [
   {
     id: 2,
     category: "Pharma",
-    src: "/images/hero_quality_scan.jpg",
+    src: "/images/img4.png",
     title: "Syrup & Oral Suspension Cartons",
     brand: "HAEMUP Liquid & GACET lines",
     alt: "Pharma carton printing – syrup packaging by Shree Harihar Printing Works"
@@ -59,7 +59,7 @@ const galleryItems: GalleryItem[] = [
   {
     id: 6,
     category: "Labels",
-    src: "/images/hero_brand_print.jpg",
+    src: "/images/img11.png",
     title: "Nutraceutical & Supplement Labels",
     brand: "Gold Standard Whey & Nutrition",
     alt: "Sticker label printing – supplement label by Shree Harihar Printing Works"
@@ -75,7 +75,7 @@ const galleryItems: GalleryItem[] = [
   {
     id: 8,
     category: "Promotional",
-    src: "/images/commercial_promotional_print.jpg",
+    src: "/images/img12.png",
     title: "Retail Standees & Hanging Danglers",
     brand: "Amul Retail POP Formats",
     alt: "Promotional print material – poster by Shree Harihar Printing Works"
@@ -83,7 +83,7 @@ const galleryItems: GalleryItem[] = [
   {
     id: 9,
     category: "Factory",
-    src: "/images/modern_offset_press.jpg",
+    src: "/images/img2.png",
     title: "Heidelberg Multicolor Press Hall",
     brand: "Ahmedabad Press Battery",
     alt: "Shree Harihar Printing Works production facility-Heidelberg press"
@@ -91,10 +91,18 @@ const galleryItems: GalleryItem[] = [
   {
     id: 10,
     category: "Factory",
-    src: "/images/hero_quality_scan.jpg",
+    src: "/images/img5.png",
     title: "Automated Optical Inspection Line",
     brand: "AutoPrint 250mm High-Speed Scan",
     alt: "Shree Harihar Printing Works production facility-carton inspection"
+  },
+  {
+    id: 11,
+    category: "Factory",
+    src: "/images/img3.png",
+    title: "BOBST Die-Cutting & Blanking Line",
+    brand: "BOBST VisionCut Production Floor",
+    alt: "Shree Harihar Printing Works production facility-BOBST die cutter"
   }
 ];
 
@@ -147,21 +155,20 @@ export default function GalleryGridSection() {
       {/* ─────────────────────────────────────────────────────────────────
           STICKY CATEGORY FILTER BAR (Follows user as gallery scales)
          ───────────────────────────────────────────────────────────────── */}
-      <div className="sticky top-16 sm:top-20 z-30 bg-white/95 backdrop-blur-md py-4 sm:py-5 border-b border-slate-200/80 shadow-xs">
+      <div className="sticky top-[53px] sm:top-[57px] z-30 bg-white/95 backdrop-blur-md py-4 sm:py-5 border-b border-slate-200/80 shadow-xs">
         <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between gap-4">
-            
+
             {/* Filter Pills */}
             <div className="flex flex-wrap items-center gap-2 sm:gap-3">
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setActiveFilter(cat)}
-                  className={`font-heading text-xs sm:text-sm font-semibold uppercase tracking-wider px-4 sm:px-5 py-2 rounded-full transition-all duration-300 ${
-                    activeFilter === cat
-                      ? "bg-slate-900 text-white shadow-sm"
-                      : "bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900"
-                  }`}
+                  className={`font-heading text-xs sm:text-sm font-semibold uppercase tracking-wider px-4 sm:px-5 py-2 rounded-full transition-all duration-300 ${activeFilter === cat
+                    ? "bg-slate-900 text-white shadow-sm"
+                    : "bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900"
+                    }`}
                 >
                   {cat}
                 </button>

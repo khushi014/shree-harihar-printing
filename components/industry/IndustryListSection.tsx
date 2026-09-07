@@ -67,7 +67,7 @@ const industries: IndustryItem[] = [
       "Fast, dependable turnaround for rapid retail restocking"
     ],
     tags: ["Drip-Off UV", "Hot Foil Stamping", "Multi-SKU Batches", "High-Rub Resistant"],
-    image: "/images/fmcg_cosmetic_cartons.jpg",
+    image: "/images/img7.png",
     imageAlt: "Luxury cosmetics and personal care retail cartons with premium varnish"
   },
   {
@@ -105,7 +105,7 @@ const industries: IndustryItem[] = [
       "Custom bottle wraps and folding cartons built for shelf distinction"
     ],
     tags: ["Metallic Foiling", "Micro-Legibility", "Tamper Evident", "Soft-Touch Matte"],
-    image: "/images/sticker_labels_roll.jpg",
+    image: "/images/img13.png",
     imageAlt: "Modern nutraceutical and health supplement cartons and specialized product packaging"
   }
 ];
@@ -117,7 +117,7 @@ export default function IndustryListSection() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 240; // Offset for header + sticky nav
-      
+
       for (let i = industries.length - 1; i >= 0; i--) {
         const element = document.getElementById(industries[i].id);
         if (element) {
@@ -148,7 +148,7 @@ export default function IndustryListSection() {
   return (
     <section className="py-20 lg:py-28 bg-slate-50 border-b border-slate-200 relative">
       <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Responsive Two-Column Layout: Sticky Sidebar (30%) + Scrolling Cards (70%) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
 
@@ -156,7 +156,7 @@ export default function IndustryListSection() {
               LEFT COLUMN: STICKY SIDEBAR NAVIGATION (Scrollspy)
              ───────────────────────────────────────────────────────────── */}
           <aside className="lg:col-span-4 lg:sticky lg:top-32 self-start space-y-6">
-            
+
             {/* Nav Card Container */}
             <div className="bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-7 shadow-sm">
               <div className="flex items-center gap-2 text-primary text-xs font-heading font-semibold uppercase tracking-widest mb-3">
@@ -179,19 +179,17 @@ export default function IndustryListSection() {
                     <button
                       key={ind.id}
                       onClick={() => scrollToSector(ind.id)}
-                      className={`w-full text-left p-3.5 rounded-2xl transition-all duration-300 flex items-center justify-between group border ${
-                        isActive
-                          ? "bg-primary/5 border-primary/40 text-primary shadow-xs"
-                          : "bg-slate-50/70 border-slate-200/70 text-slate-600 hover:bg-slate-100 hover:text-slate-900"
-                      }`}
+                      className={`w-full text-left p-3.5 rounded-2xl transition-all duration-300 flex items-center justify-between group border ${isActive
+                        ? "bg-primary/5 border-primary/40 text-primary shadow-xs"
+                        : "bg-slate-50/70 border-slate-200/70 text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+                        }`}
                     >
                       <div className="flex items-center gap-3 min-w-0">
                         <div
-                          className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-colors ${
-                            isActive
-                              ? "bg-primary text-white"
-                              : "bg-white border border-slate-200 text-slate-500 group-hover:text-primary group-hover:border-primary/30"
-                          }`}
+                          className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-colors ${isActive
+                            ? "bg-primary text-white"
+                            : "bg-white border border-slate-200 text-slate-500 group-hover:text-primary group-hover:border-primary/30"
+                            }`}
                         >
                           <Icon className="w-4 h-4" />
                         </div>
@@ -200,9 +198,8 @@ export default function IndustryListSection() {
                             0{idx + 1} SECTOR
                           </span>
                           <span
-                            className={`block text-sm font-heading font-medium truncate ${
-                              isActive ? "text-primary font-bold" : "text-slate-800"
-                            }`}
+                            className={`block text-sm font-heading font-medium truncate ${isActive ? "text-primary font-bold" : "text-slate-800"
+                              }`}
                           >
                             {ind.category}
                           </span>
@@ -210,11 +207,10 @@ export default function IndustryListSection() {
                       </div>
 
                       <ArrowRight
-                        className={`w-4 h-4 shrink-0 transition-transform ${
-                          isActive
-                            ? "text-primary translate-x-0.5"
-                            : "text-slate-300 group-hover:text-slate-600 group-hover:translate-x-0.5"
-                        }`}
+                        className={`w-4 h-4 shrink-0 transition-transform ${isActive
+                          ? "text-primary translate-x-0.5"
+                          : "text-slate-300 group-hover:text-slate-600 group-hover:translate-x-0.5"
+                          }`}
                       />
                     </button>
                   );
@@ -229,7 +225,7 @@ export default function IndustryListSection() {
               RIGHT COLUMN: FULL-WIDTH ARCHITECTURAL SECTOR CARDS
              ───────────────────────────────────────────────────────────── */}
           <div className="lg:col-span-8 space-y-12 sm:space-y-16">
-            {industries.map((ind, idx) => (
+            {industries.map((ind) => (
               <motion.article
                 key={ind.id}
                 id={ind.id}

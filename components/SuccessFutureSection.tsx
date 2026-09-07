@@ -18,7 +18,7 @@ const cards = [
   {
     title: "FMCG Cartons",
     desc: "From agarbatti boxes to soap and perfume packaging, our fast, precise production keeps FMCG brands moving without delivery glitches.",
-    img: "/images/fmcg_cosmetic_cartons.jpg",
+    img: "/images/img7.png",
     href: "/industry"
   },
   {
@@ -30,7 +30,7 @@ const cards = [
   {
     title: "Promotional Materials",
     desc: "Catalogues, standees, brochures, posters, and danglers built to fulfill out-of-the-box creative briefs for consumer brands.",
-    img: "/images/commercial_promotional_print.jpg",
+    img: "/images/img12.png",
     href: "/services"
   },
   {

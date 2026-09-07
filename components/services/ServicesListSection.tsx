@@ -17,7 +17,7 @@ const services = [
       "Aqua/UV coating and drip-off finishing available"
     ],
     buttonText: "Request a Carton Printing Quote",
-    image: "/images/folding_cartons_specimen.jpg" // boxes / manufacturing
+    image: "/images/img4.png" // auto carton folding-gluing line
   },
   {
     title: "Sticker & Label Printing",
@@ -29,7 +29,7 @@ const services = [
       "Precision cutting and finishing"
     ],
     buttonText: "Request a Label Printing Quote",
-    image: "/images/sticker_labels_roll.jpg" // labels / abstract
+    image: "/images/img11.png" // label printing roll press
   },
   {
     title: "Promotional Print Materials",
@@ -41,11 +41,11 @@ const services = [
       "Fast production for time-sensitive campaigns"
     ],
     buttonText: "Request a Promotional Printing Quote",
-    image: "/images/commercial_promotional_print.jpg" // brochures / creative
+    image: "/images/img12.png" // promotional brochures / catalogues
   }
 ];
 
-export default function ServicesListSection({ setQuoteModalOpen }: { setQuoteModalOpen?: (open: boolean) => void }) {
+export default function ServicesListSection() {
   return (
     <div className="flex flex-col w-full">
       {services.map((svc, idx) => {
@@ -56,7 +56,7 @@ export default function ServicesListSection({ setQuoteModalOpen }: { setQuoteMod
               {/* Flex row container ensures image is ALWAYS stacked on top of text on mobile (sm/md),
                   while gracefully alternating on desktop (lg:flex-row vs lg:flex-row-reverse) */}
               <div className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-20 items-center`}>
-                
+
                 {/* Image Block: Always first in DOM so it stacks on top on mobile */}
                 <motion.div
                   initial={{ opacity: 0, x: isEven ? -30 : 30 }}
@@ -65,10 +65,10 @@ export default function ServicesListSection({ setQuoteModalOpen }: { setQuoteMod
                   transition={{ duration: 0.6 }}
                   className="w-full lg:w-1/2 relative h-[380px] sm:h-[480px] lg:h-[500px] rounded-2xl overflow-hidden shadow-xl group border border-slate-200 bg-slate-900"
                 >
-                  <img 
-                    src={svc.image} 
-                    alt={svc.title} 
-                    className="w-full h-full object-cover filter transition-transform duration-700 group-hover:scale-105" 
+                  <img
+                    src={svc.image}
+                    alt={svc.title}
+                    className="w-full h-full object-cover filter transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-slate-950/15 group-hover:bg-transparent transition-colors duration-500" />
                 </motion.div>
@@ -90,7 +90,7 @@ export default function ServicesListSection({ setQuoteModalOpen }: { setQuoteMod
                   <p className="font-sans text-base sm:text-lg text-slate-600 leading-relaxed mb-6 font-normal">
                     {svc.desc}
                   </p>
-                  
+
                   <div className="mb-6 p-4 bg-primary/5 border border-primary/20 text-slate-800 font-sans text-sm sm:text-[15px] leading-relaxed rounded-xl">
                     <strong className="font-heading font-bold text-slate-900">Ideal for:</strong>{' '}
                     {svc.idealFor.split('·').map((item, i) => (
@@ -114,7 +114,7 @@ export default function ServicesListSection({ setQuoteModalOpen }: { setQuoteMod
                   </ul>
 
                   <div>
-                    <Link 
+                    <Link
                       href="/contact"
                       className="inline-flex items-center gap-2 font-heading text-sm font-bold uppercase tracking-widest text-slate-900 border-b-2 border-slate-900 hover:text-primary hover:border-primary transition-colors pb-1 group/btn"
                     >
@@ -123,7 +123,7 @@ export default function ServicesListSection({ setQuoteModalOpen }: { setQuoteMod
                     </Link>
                   </div>
                 </motion.div>
-                
+
               </div>
             </div>
           </section>
