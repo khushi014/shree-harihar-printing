@@ -103,6 +103,70 @@ const galleryItems: GalleryItem[] = [
     title: "BOBST Die-Cutting & Blanking Line",
     brand: "BOBST VisionCut Production Floor",
     alt: "Shree Harihar Printing Works production facility-BOBST die cutter"
+  },
+  {
+    id: 12,
+    category: "Factory",
+    src: "/images/Heidelberg_Two_Colour.png",
+    title: "Heidelberg Two Colour Offset",
+    brand: "Printing Machine - View 1",
+    alt: "Heidelberg Two Colour printing machine"
+  },
+  {
+    id: 13,
+    category: "Factory",
+    src: "/images/Heidelberg_Four_Colour.png",
+    title: "Heidelberg Four Colour",
+    brand: "With Online Coater - View 1",
+    alt: "Heidelberg Four Colour offset printing machine with online Coater"
+  },
+  {
+    id: 14,
+    category: "Factory",
+    src: "/images/Heidelberg_Six_Colour.png",
+    title: "Heidelberg Six Colour",
+    brand: "With Online Coater - View 1",
+    alt: "Heidelberg Six Colour offset printing machine with online Coater"
+  },
+  {
+    id: 15,
+    category: "Factory",
+    src: "/images/Maxima_Punching.png",
+    title: "Maxima Punching Machine",
+    brand: "Die Cutting System - View 1",
+    alt: "Maxima Punching Machine packaging"
+  },
+  {
+    id: 16,
+    category: "Factory",
+    src: "/images/checkmate_Carton_Inspection_Machine.png",
+    title: "Checkmate Carton Inspection",
+    brand: "High Speed Machine - View 1",
+    alt: "Checkmate Carton Inspection Machine high speed"
+  },
+  {
+    id: 17,
+    category: "Factory",
+    src: "/images/bobst.png",
+    title: "BOBST Expertfold",
+    brand: "With Accubraille - View 1",
+    alt: "BOBST Expertfold with Accubraille folding carton machine"
+  },
+  {
+    id: 18,
+    category: "Factory",
+    src: "/images/Flexo_Label_Printing_Machine.png",
+    title: "Flexo Label Printing Machine",
+    brand: "Roll to Roll System - View 1",
+    alt: "Flexo Label Printing Machine roll to roll"
+  },
+  {
+    id: 19,
+    category: "Factory",
+    src: "/images/Flexo_Label_Printing_Machine2.png",
+    title: "Flexo Label Printing Machine",
+    brand: "Roll to Roll System - View 2",
+    alt: "Flexo Label Printing Machine roll to roll alternate"
   }
 ];
 
@@ -193,13 +257,13 @@ export default function GalleryGridSection() {
           layout
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
         >
-          <AnimatePresence>
+          <AnimatePresence mode="popLayout">
             {filteredItems.map((item) => (
               <motion.div
                 layout
-                initial={{ opacity: 0, scale: 0.94 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.94 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
                 transition={{ duration: 0.3 }}
                 key={item.id}
                 onClick={() => setSelectedItem(item)}

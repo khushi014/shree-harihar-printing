@@ -42,11 +42,12 @@ export default function AboutClientsGridSection() {
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 className={`cursor-pointer px-4 py-2 rounded-full text-xs sm:text-sm font-heading font-bold uppercase tracking-wider transition-all duration-200 border ${isActive
-                    ? "bg-primary text-white border-primary shadow-md shadow-primary/20 scale-[1.02]"
-                    : "bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100 hover:text-slate-900"
+                  ? "bg-primary text-white border-primary shadow-md shadow-primary/20 scale-[1.02]"
+                  : "bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100 hover:text-slate-900"
                   }`}
               >
-                {cat} <span className={`ml-1 text-[11px] ${isActive ? "text-white/80" : "text-slate-400"}`}>({count})</span>
+                {cat}
+                {/* <span className={`ml-1 text-[11px] ${isActive ? "text-white/80" : "text-slate-400"}`}>({count})</span> */}
               </button>
             );
           })}
