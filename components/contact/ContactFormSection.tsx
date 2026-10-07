@@ -14,19 +14,38 @@ export default function ContactFormSection() {
   });
   const [loading, setLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
+    setError(null);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || !data.success) {
+        setError(data.error || "Something went wrong. Please try again.");
+      } else {
+        setIsSubmitted(true);
+        setTimeout(() => {
+          setIsSubmitted(false);
+          setForm({ name: "", company: "", email: "", phone: "", message: "" });
+        }, 4000);
+      }
+    } catch {
+      setError("Network error. Please check your connection and try again.");
+    } finally {
       setLoading(false);
-      setIsSubmitted(true);
-      setTimeout(() => {
-        setIsSubmitted(false);
-        setForm({ name: "", company: "", email: "", phone: "", message: "" });
-      }, 3500);
-    }, 800);
+    }
   };
+
 
   return (
     <motion.div
@@ -133,9 +152,15 @@ export default function ContactFormSection() {
               placeholder="Tell us about your packaging requirements, quantities..."
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
-              className="w-full h-full min-h-[120px] bg-transparent border-b-2 border-slate-300 px-0 py-3 text-base font-sans text-slate-900 placeholder:text-slate-400 focus:border-primary focus:ring-0 outline-none transition-colors resize-none"
+              className="w-full h-full min-h-30 bg-transparent border-b-2 border-slate-300 px-0 py-3 text-base font-sans text-slate-900 placeholder:text-slate-400 focus:border-primary focus:ring-0 outline-none transition-colors resize-none"
             />
           </div>
+
+          {error && (
+            <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-4 py-3">
+              ⚠ {error}
+            </p>
+          )}
 
           <button
             type="submit"

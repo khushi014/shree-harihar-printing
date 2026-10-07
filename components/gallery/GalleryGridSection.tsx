@@ -6,19 +6,19 @@ import { X, ChevronLeft, ChevronRight, Maximize2, Sparkles } from "lucide-react"
 
 interface GalleryItem {
   id: number;
-  category: "Pharma" | "FMCG" | "Labels" | "Promotional" | "Factory";
+  category: "Print Work" | "Factory";
   src: string;
   title: string;
   brand: string;
   alt: string;
 }
 
-const categories = ["All", "Pharma", "FMCG", "Labels", "Promotional", "Factory"] as const;
+const categories = ["All", "Print Work", "Factory"] as const;
 
 const galleryItems: GalleryItem[] = [
   {
     id: 1,
-    category: "Pharma",
+    category: "Print Work",
     src: "/images/pharma_carton_braille.jpg",
     title: "Vial Cartons & Injection Boxes",
     brand: "Abbott Healthcare & Suiphar",
@@ -26,7 +26,7 @@ const galleryItems: GalleryItem[] = [
   },
   {
     id: 2,
-    category: "Pharma",
+    category: "Print Work",
     src: "/images/img4.png",
     title: "Syrup & Oral Suspension Cartons",
     brand: "HAEMUP Liquid & GACET lines",
@@ -34,7 +34,7 @@ const galleryItems: GalleryItem[] = [
   },
   {
     id: 3,
-    category: "FMCG",
+    category: "Print Work",
     src: "/images/fmcg_cosmetic_cartons.jpg",
     title: "Cosmetics & Luxury Personal Care",
     brand: "Drip-Off UV & Gold Hot Foil",
@@ -42,7 +42,7 @@ const galleryItems: GalleryItem[] = [
   },
   {
     id: 4,
-    category: "FMCG",
+    category: "Print Work",
     src: "/images/folding_cartons_specimen.jpg",
     title: "Instant-Mix Food & Snack Cartons",
     brand: "Honest Foods & Frylo Poochkas",
@@ -50,7 +50,7 @@ const galleryItems: GalleryItem[] = [
   },
   {
     id: 5,
-    category: "Labels",
+    category: "Print Work",
     src: "/images/sticker_labels_roll.jpg",
     title: "Bottle & Product Container Labels",
     brand: "Amul Kool Beverage Lines",
@@ -58,7 +58,7 @@ const galleryItems: GalleryItem[] = [
   },
   {
     id: 6,
-    category: "Labels",
+    category: "Print Work",
     src: "/images/img11.png",
     title: "Nutraceutical & Supplement Labels",
     brand: "Gold Standard Whey & Nutrition",
@@ -66,7 +66,7 @@ const galleryItems: GalleryItem[] = [
   },
   {
     id: 7,
-    category: "Promotional",
+    category: "Print Work",
     src: "/images/commercial_promotional_print.jpg",
     title: "Brand Brochures & Literature",
     brand: "Healthcare Corporate Literature",
@@ -74,7 +74,7 @@ const galleryItems: GalleryItem[] = [
   },
   {
     id: 8,
-    category: "Promotional",
+    category: "Print Work",
     src: "/images/img12.png",
     title: "Retail Standees & Hanging Danglers",
     brand: "Amul Retail POP Formats",
@@ -167,6 +167,46 @@ const galleryItems: GalleryItem[] = [
     title: "Flexo Label Printing Machine",
     brand: "Roll to Roll System - View 2",
     alt: "Flexo Label Printing Machine roll to roll alternate"
+  },
+  {
+    id: 20,
+    category: "Print Work",
+    src: "/images/sample1.png",
+    title: "Print Sample — I",
+    brand: "Shree Harihar Quality Specimen",
+    alt: "Print sample 1 by Shree Harihar Printing Works"
+  },
+  {
+    id: 21,
+    category: "Print Work",
+    src: "/images/sample2.png",
+    title: "Print Sample — II",
+    brand: "Shree Harihar Quality Specimen",
+    alt: "Print sample 2 by Shree Harihar Printing Works"
+  },
+  {
+    id: 22,
+    category: "Print Work",
+    src: "/images/sample3.png",
+    title: "Print Sample — III",
+    brand: "Shree Harihar Quality Specimen",
+    alt: "Print sample 3 by Shree Harihar Printing Works"
+  },
+  {
+    id: 23,
+    category: "Print Work",
+    src: "/images/sample4.png",
+    title: "Print Sample — IV",
+    brand: "Shree Harihar Quality Specimen",
+    alt: "Print sample 4 by Shree Harihar Printing Works"
+  },
+  {
+    id: 24,
+    category: "Print Work",
+    src: "/images/sample5.png",
+    title: "Print Sample — V",
+    brand: "Shree Harihar Quality Specimen",
+    alt: "Print sample 5 by Shree Harihar Printing Works"
   }
 ];
 
@@ -253,56 +293,30 @@ export default function GalleryGridSection() {
           PURE IMAGE MASONRY / GRID (Clean, Visual, Pinterest-Style)
          ───────────────────────────────────────────────────────────────── */}
       <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14">
-        <motion.div
-          layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
-        >
-          <AnimatePresence mode="popLayout">
-            {filteredItems.map((item) => (
-              <motion.div
-                layout
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.3 }}
-                key={item.id}
-                onClick={() => setSelectedItem(item)}
-                className="group relative overflow-hidden bg-slate-100 aspect-[4/3] rounded-2xl sm:rounded-3xl cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/80 hover:border-slate-300"
-              >
-                {/* High-Resolution Photo in Rich Saturated Color */}
-                <img
-                  src={item.src}
-                  alt={item.alt}
-                  loading="lazy"
-                  className="w-full h-full object-cover filter saturate-105 group-hover:scale-105 transition-transform duration-700"
-                />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {filteredItems.map((item) => (
+            <div
+              key={item.id}
+              onClick={() => setSelectedItem(item)}
+              className="group relative overflow-hidden bg-slate-100 aspect-[4/3] rounded-2xl sm:rounded-3xl cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/80 hover:border-slate-300"
+            >
+              {/* High-Resolution Photo in Rich Saturated Color */}
+              <img
+                src={item.src}
+                alt={item.alt}
+                loading="lazy"
+                className="w-full h-full object-cover filter saturate-105 group-hover:scale-105 transition-transform duration-700"
+              />
 
-                {/* Subtle Hover Scrim with Minimalist Tagging */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-5 sm:p-6">
-                  {/* Top Pill: Category */}
-                  <div className="flex items-center justify-between">
-                    <span className="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[11px] font-mono tracking-wider uppercase border border-white/15">
-                      {item.category}
-                    </span>
-                    <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white">
-                      <Maximize2 className="w-4 h-4" />
-                    </div>
-                  </div>
-
-                  {/* Bottom Minimalist Info */}
-                  <div>
-                    <span className="block text-[11px] font-mono text-emerald-400 uppercase tracking-wider font-medium mb-1">
-                      ● {item.brand}
-                    </span>
-                    <h3 className="font-heading font-bold text-base sm:text-lg text-white leading-snug">
-                      {item.title}
-                    </h3>
-                  </div>
+              {/* Expand Icon on Hover */}
+              <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-white">
+                  <Maximize2 className="w-4 h-4" />
                 </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* ─────────────────────────────────────────────────────────────────

@@ -72,8 +72,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${openSans.variable} scroll-smooth`}>
-      <body className="min-h-screen flex flex-col font-sans antialiased text-slate-800 bg-white">
+    <html lang="en" className={`${montserrat.variable} ${openSans.variable} scroll-smooth`} data-scroll-behavior="smooth">
+      <body className="min-h-screen flex flex-col font-sans antialiased text-slate-800 bg-white" suppressHydrationWarning>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
