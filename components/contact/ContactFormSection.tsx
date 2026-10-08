@@ -17,16 +17,17 @@ export default function ContactFormSection() {
   const [error, setError] = useState<string | null>(null);
 
   const SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbzORsLce5U7Nh9O4PlAqht1jYzz9aB3f4EtdS3_yRfROLOyKUTrZ4z6Hldu1LH9l4Xn1A/exec";
+    "https://script.google.com/macros/s/AKfycbxlgip3jIROoQmO6zBtjA6wrP9KDJBSzejPnGyGIAhcuB7CzLlJqWn6Yh1d52UJoDzC_w/exec";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     setLoading(true);
     setError(null);
 
     try {
-      // Create form data using URLSearchParams which Apps Script parses natively
       const formData = new URLSearchParams();
+
       formData.append("name", form.name);
       formData.append("company", form.company || "—");
       formData.append("email", form.email);
@@ -34,32 +35,58 @@ export default function ContactFormSection() {
       formData.append("message", form.message);
       formData.append(
         "submittedAt",
-        new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })
+        new Date().toLocaleString("en-IN", {
+          timeZone: "Asia/Kolkata",
+        })
       );
 
-      await fetch(SCRIPT_URL, {
+      console.log("Sending to Apps Script:", SCRIPT_URL);
+      console.log("Form data:", Object.fromEntries(formData));
+
+      const response = await fetch(SCRIPT_URL, {
         method: "POST",
-        mode: "no-cors",
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
+          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
         },
-        body: formData,
+        body: formData.toString(),
       });
 
-      // With no-cors we can't read the response — assume success
+      console.log("HTTP status:", response.status);
+      console.log("Response type:", response.type);
+
+      const responseText = await response.text();
+
+      console.log("Apps Script response:", responseText);
+
+      if (!response.ok) {
+        throw new Error(
+          `Apps Script returned HTTP ${response.status}`
+        );
+      }
+
       setIsSubmitted(true);
-      setTimeout(() => {
-        setIsSubmitted(false);
-        setForm({ name: "", company: "", email: "", phone: "", message: "" });
-      }, 4000);
-    } catch {
-      setError("Network error. Please check your connection and try again.");
+
+      setForm({
+        name: "",
+        company: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+
+    } catch (error) {
+      console.error("FORM SUBMISSION ERROR:", error);
+
+      setError(
+        error instanceof Error
+          ? error.message
+          : "Unable to submit enquiry."
+      );
+
     } finally {
       setLoading(false);
     }
   };
-
-
 
   return (
     <motion.div
