@@ -16,35 +16,49 @@ export default function ContactFormSection() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  const SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbzORsLce5U7Nh9O4PlAqht1jYzz9aB3f4EtdS3_yRfROLOyKUTrZ4z6Hldu1LH9l4Xn1A/exec";
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError(null);
 
     try {
-      const res = await fetch("/api/contact", {
+      // Create form data using URLSearchParams which Apps Script parses natively
+      const formData = new URLSearchParams();
+      formData.append("name", form.name);
+      formData.append("company", form.company || "—");
+      formData.append("email", form.email);
+      formData.append("phone", form.phone || "—");
+      formData.append("message", form.message);
+      formData.append(
+        "submittedAt",
+        new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })
+      );
+
+      await fetch(SCRIPT_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: formData,
       });
 
-      const data = await res.json();
-
-      if (!res.ok || !data.success) {
-        setError(data.error || "Something went wrong. Please try again.");
-      } else {
-        setIsSubmitted(true);
-        setTimeout(() => {
-          setIsSubmitted(false);
-          setForm({ name: "", company: "", email: "", phone: "", message: "" });
-        }, 4000);
-      }
+      // With no-cors we can't read the response — assume success
+      setIsSubmitted(true);
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setForm({ name: "", company: "", email: "", phone: "", message: "" });
+      }, 4000);
     } catch {
       setError("Network error. Please check your connection and try again.");
     } finally {
       setLoading(false);
     }
   };
+
 
 
   return (
