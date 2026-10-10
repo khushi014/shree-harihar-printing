@@ -72,7 +72,7 @@ const capabilities = [
   }
 ];
 
-export default function CapabilitiesSection({ setQuoteModalOpen }: { setQuoteModalOpen?: (open: boolean) => void }) {
+export default function CapabilitiesSection() {
   const [activeCapability, setActiveCapability] = useState(0);
 
   return (

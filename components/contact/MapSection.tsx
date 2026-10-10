@@ -32,15 +32,15 @@ export default function MapSection() {
         viewport={{ once: true }}
         className="w-full h-[400px] sm:h-[500px] bg-slate-200"
       >
-        <iframe 
+        <iframe
           title="Shree Harihar Printing Works LLP Location"
-          width="100%" 
-          height="100%" 
-          style={{ border: 0 }} 
-          loading="lazy" 
-          allowFullScreen 
-          referrerPolicy="no-referrer-when-downgrade" 
-          src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=Shree%20Harihar%20Printing%20Works%20LLP,%20233/1,%20Miroli%20Village,%20Near%20Pirana%20Village,%20Daskroi,%20Ahmedabad%20%E2%80%93%20382425+(Shree%20Harihar%20Printing%20Works)&t=&z=14&ie=UTF8&iwloc=B&output=embed"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          loading="lazy"
+          allowFullScreen
+          referrerPolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=Shree%20Harihar%20Printing%20Works%20LLP,%20233/1,%20Miroli%20Village,%20Pirana%20to%20Miroli%20Village%20Road,%20Daskroi,%20Ahmedabad%20-%20382425+(Shree%20Harihar%20Printing%20Works)&t=&z=14&ie=UTF8&iwloc=B&output=embed"
         ></iframe>
       </motion.div>
     </section>

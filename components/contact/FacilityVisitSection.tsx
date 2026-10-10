@@ -9,9 +9,9 @@ export default function FacilityVisitSection() {
   return (
     <section className="py-20 lg:py-24 bg-slate-100 border-y border-slate-200">
       <div className="max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <div className="bg-slate-900 text-white rounded-sm overflow-hidden flex flex-col md:flex-row items-center shadow-lg relative">
-          
+
           <div className="absolute inset-0 bg-primary/5 pointer-events-none" />
 
           {/* Text block */}
@@ -40,7 +40,7 @@ export default function FacilityVisitSection() {
               transition={{ delay: 0.2 }}
             >
               <a
-                href="mailto:info@hariharprintpack.com?subject=Facility%20Visit%20Request"
+                href="mailto:office.hpw@gmail.com?subject=Facility%20Visit%20Request"
                 className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white font-heading text-sm font-bold tracking-widest uppercase px-8 py-4 transition-colors shadow-md hover:-translate-y-1 transform duration-300"
               >
                 <Factory className="w-5 h-5" /> Book a Facility Visit <ArrowRight className="w-4 h-4 ml-1" />
@@ -50,18 +50,18 @@ export default function FacilityVisitSection() {
 
           {/* Visual block */}
           <div className="w-full md:w-2/5 lg:w-1/3 h-64 md:h-full relative overflow-hidden bg-slate-800">
-             <img 
-               src="/images/factory_team_craft.jpg"
-               alt="Plant manager and engineers reviewing equipment on the factory floor during a facility tour"
-               className="absolute inset-0 w-full h-full object-cover transition-all duration-700 opacity-90 hover:opacity-100 hover:scale-105 filter saturate-105"
-             />
-             <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/60 to-transparent hidden md:block"></div>
-             <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent block md:hidden"></div>
+            <img
+              src="/images/factory_team_craft.jpg"
+              alt="Plant manager and engineers reviewing equipment on the factory floor during a facility tour"
+              className="absolute inset-0 w-full h-full object-cover transition-all duration-700 opacity-90 hover:opacity-100 hover:scale-105 filter saturate-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/60 to-transparent hidden md:block"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent block md:hidden"></div>
           </div>
 
         </div>
 
       </div>
-    </section>
+    </section >
   );
 }

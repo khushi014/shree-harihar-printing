@@ -6,7 +6,7 @@ import Image from "next/image";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { Facebook, Instagram, Youtube, Linkedin, Whatsapp } from "./Icons";
 
-export default function FooterSection({ setQuoteModalOpen }: { setQuoteModalOpen?: (val: boolean) => void }) {
+export default function FooterSection() {
   return (
     <>
 
@@ -46,7 +46,7 @@ export default function FooterSection({ setQuoteModalOpen }: { setQuoteModalOpen
                 <a href="#" className="p-2 rounded-full bg-slate-800 text-slate-400 hover:text-white hover:bg-[#E1306C] transition-all duration-200" title="Instagram"><Instagram className="h-3.5 w-3.5" /></a>
                 <a href="#" className="p-2 rounded-full bg-slate-800 text-slate-400 hover:text-white hover:bg-[#FF0000] transition-all duration-200" title="YouTube"><Youtube className="h-3.5 w-3.5" /></a>
                 <a href="#" className="p-2 rounded-full bg-slate-800 text-slate-400 hover:text-white hover:bg-[#0077b5] transition-all duration-200" title="LinkedIn"><Linkedin className="h-3.5 w-3.5" /></a>
-                <a href="https://wa.me/919825000000" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-slate-800 text-slate-400 hover:text-white hover:bg-emerald-600 transition-all duration-200" title="WhatsApp"><Whatsapp className="h-3.5 w-3.5" /></a>
+                <a href="https://wa.me/919825121164" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-slate-800 text-slate-400 hover:text-white hover:bg-emerald-600 transition-all duration-200" title="WhatsApp"><Whatsapp className="h-3.5 w-3.5" /></a>
               </div>
             </div>
 
@@ -97,10 +97,10 @@ export default function FooterSection({ setQuoteModalOpen }: { setQuoteModalOpen
               <p className="font-sans text-xs text-slate-400 leading-relaxed flex items-start gap-2.5">
                 <MapPin className="h-4 w-4 text-primary-light shrink-0 mt-0.5" />
                 <span>
+                  Shree Harihar Printing Works LLP,<br />
                   233/1, Miroli Village,<br />
-                  Near Pirana Village, Daskroi,<br />
-                  Ahmedabad - 382425,<br />
-                  Gujarat, India
+                  Pirana to Miroli Village Road,<br />
+                  Daskroi, Ahmedabad - 382425
                 </span>
               </p>
             </div>
@@ -113,16 +113,12 @@ export default function FooterSection({ setQuoteModalOpen }: { setQuoteModalOpen
               <ul className="space-y-3 text-xs text-slate-400 font-sans">
                 <li className="flex items-center gap-2">
                   <Phone className="h-4 w-4 text-primary-light" />
-                  <span>(079)-22932863, 22931311</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <Phone className="h-4 w-4 text-primary-light" />
-                  <span>+91 74900 41921</span>
+                  <span>+91 98251 21164, +91 98250 92058</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <Mail className="h-4 w-4 text-primary-light" />
-                  <a href="mailto:info@hariharprintpack.com" className="hover:text-primary-light transition-colors">
-                    info@hariharprintpack.com
+                  <a href="mailto:office.hpw@gmail.com" className="hover:text-primary-light transition-colors">
+                    office.hpw@gmail.com
                   </a>
                 </li>
               </ul>

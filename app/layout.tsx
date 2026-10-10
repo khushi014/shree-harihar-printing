@@ -5,14 +5,12 @@ import "./globals.css";
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
-  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
 const openSans = Open_Sans({
   subsets: ["latin"],
   variable: "--font-open-sans",
-  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -89,7 +87,7 @@ export default function RootLayout({
               "foundingDate": "1921",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "233/1, Miroli Village, Near Pirana Village, Daskroi",
+                "streetAddress": "Shree Harihar Printing Works LLP, 233/1, Miroli Village, Pirana to Miroli Village Road, Daskroi",
                 "addressLocality": "Ahmedabad",
                 "addressRegion": "Gujarat",
                 "postalCode": "382425",
@@ -97,9 +95,9 @@ export default function RootLayout({
               },
               "contactPoint": {
                 "@type": "ContactPoint",
-                "telephone": "+91-74900-41921",
+                "telephone": "+91-98251-21164",
                 "contactType": "sales",
-                "email": "info@hariharprintpack.com",
+                "email": "office.hpw@gmail.com",
                 "areaServed": "IN",
                 "availableLanguage": ["English", "Hindi", "Gujarati"]
               },

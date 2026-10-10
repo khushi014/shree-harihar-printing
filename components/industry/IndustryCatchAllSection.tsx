@@ -6,11 +6,11 @@ import { ArrowRight, HelpCircle, Layers } from "lucide-react";
 
 export default function IndustryCatchAllSection() {
   const scrollToContact = () => {
-    const el = document.getElementById("rfq-section") || document.getElementById("contact-section");
+    const el = document.getElementById("contact");
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
     } else {
-      window.location.href = "#rfq-section";
+      window.location.href = "/contact";
     }
   };
 

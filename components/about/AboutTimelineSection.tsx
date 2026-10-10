@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   Play,
   X,
@@ -17,7 +17,7 @@ import { TIMELINE_DECADES, TimelineDecade } from "./timelineData";
 
 export default function AboutTimelineSection() {
   const [selectedEra, setSelectedEra] = useState<string>("all");
-  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+
   const timelineRef = useRef<HTMLDivElement>(null);
 
   // Filter decades
@@ -70,18 +70,7 @@ export default function AboutTimelineSection() {
               From our humble beginnings with two treadle letterpress platens in 1921 to today&apos;s state-of-the-art automated packaging facility. A timeline spanning five generations.
             </p>
 
-            {/* "Watch Our Milestone" Action Button */}
-            <motion.button
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.97 }}
-              onClick={() => setIsVideoModalOpen(true)}
-              className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white text-slate-900 font-heading font-medium text-xs sm:text-sm uppercase tracking-wider shadow-lg hover:bg-slate-100 hover:shadow-primary/20 transition-all group cursor-pointer"
-            >
-              <span className="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-white group-hover:bg-primary-dark transition-colors">
-                <Play className="w-3.5 h-3.5 fill-white ml-0.5" />
-              </span>
-              Watch Our Milestone
-            </motion.button>
+
           </motion.div>
         </div>
       </div>
@@ -284,56 +273,7 @@ export default function AboutTimelineSection() {
 
       </div>
 
-      {/* ── VIDEO MODAL (Watch Our Milestone) ── */}
-      <AnimatePresence>
-        {isVideoModalOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
-            {/* Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setIsVideoModalOpen(false)}
-              className="fixed inset-0 bg-slate-950/85 backdrop-blur-md"
-            />
 
-            {/* Video Container */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              className="relative w-full max-w-4xl bg-black rounded-2xl overflow-hidden shadow-2xl z-10 border border-slate-800"
-            >
-              <div className="flex items-center justify-between p-4 bg-slate-900 border-b border-slate-800 text-white">
-                <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-                  <span className="font-heading text-xs sm:text-sm font-semibold tracking-wider uppercase">
-                    Shree Harihar Printing Works LLP - Infrastructure & Milestones
-                  </span>
-                </div>
-                <button
-                  onClick={() => setIsVideoModalOpen(false)}
-                  className="p-1.5 rounded-full hover:bg-slate-800 text-slate-400 hover:text-white transition-colors cursor-pointer"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-
-              <div className="relative aspect-video bg-black flex items-center justify-center">
-                <video
-                  autoPlay
-                  controls
-                  playsInline
-                  className="w-full h-full object-contain"
-                >
-                  <source src="/infrastructure.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
 
     </section>
   );

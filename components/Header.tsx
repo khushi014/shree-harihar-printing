@@ -129,17 +129,17 @@ export default function Header({ onOpenQuote }: { onOpenQuote?: () => void }) {
           <div className="hidden lg:flex items-center space-x-2.5">
             {/* Quick Phone Call Pill */}
             <a
-              href="tel:07922932863"
+              href="tel:+919825121164"
               className="flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-slate-100 hover:bg-slate-200/80 text-slate-700 hover:text-slate-950 border border-slate-200/80 text-xs font-heading font-semibold tracking-wide transition-all shadow-xs"
-              title="Call us: (079) 22932863"
+              title="Call us: +91 98251 21164"
             >
               <Phone className="w-3.5 h-3.5 text-primary" />
-              <span className="hidden xl:inline">(079) 22932863</span>
+              <span className="hidden xl:inline">+91 98251 21164</span>
             </a>
 
             {/* WhatsApp Quick Icon */}
             <a
-              href="https://wa.me/919825000000"
+              href="https://wa.me/919825121164"
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-600 hover:text-white bg-slate-100 hover:bg-emerald-600 p-2 rounded-full border border-slate-200/80 transition-all duration-200 hover:scale-110 shadow-xs"
@@ -288,11 +288,11 @@ export default function Header({ onOpenQuote }: { onOpenQuote?: () => void }) {
                   <a href="#" className="p-2 rounded-full bg-slate-100 text-slate-600 hover:text-white hover:bg-primary transition-colors"><Instagram className="h-4 w-4" /></a>
                   <a href="#" className="p-2 rounded-full bg-slate-100 text-slate-600 hover:text-white hover:bg-primary transition-colors"><Youtube className="h-4 w-4" /></a>
                   <a href="#" className="p-2 rounded-full bg-slate-100 text-slate-600 hover:text-white hover:bg-primary transition-colors"><Linkedin className="h-4 w-4" /></a>
-                  <a href="https://wa.me/919825000000" className="p-2 rounded-full bg-slate-100 text-slate-600 hover:text-white hover:bg-emerald-600 transition-colors"><Whatsapp className="h-4 w-4" /></a>
+                  <a href="https://wa.me/919825121164" className="p-2 rounded-full bg-slate-100 text-slate-600 hover:text-white hover:bg-emerald-600 transition-colors"><Whatsapp className="h-4 w-4" /></a>
                 </div>
                 <div className="text-center">
-                  <a href="tel:07922932863" className="text-xs font-mono text-slate-700 hover:text-primary transition-colors font-medium">
-                    Tel: (079) 22932863
+                  <a href="tel:+919825121164" className="text-xs font-mono text-slate-700 hover:text-primary transition-colors font-medium">
+                    Tel: +91 98251 21164
                   </a>
                   <p className="text-[10px] text-slate-500 mt-1 uppercase tracking-widest font-heading">
                     Est. 1921 • 5th Generation Printing
